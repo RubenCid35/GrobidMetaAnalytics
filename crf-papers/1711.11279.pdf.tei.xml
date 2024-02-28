@@ -1,0 +1,1309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2018-06-07">7 Jun 2018</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName coords="1,139.77,160.20,42.34,8.96"><forename type="first">Been</forename><surname>Kim</surname></persName>
+						</author>
+						<author>
+							<persName coords="1,188.76,160.20,83.09,8.96"><forename type="first">Martin</forename><surname>Wattenberg</surname></persName>
+						</author>
+						<author>
+							<persName coords="1,278.48,160.20,58.80,8.96"><forename type="first">Justin</forename><surname>Gilmer</surname></persName>
+						</author>
+						<author>
+							<persName coords="1,343.92,160.20,45.65,8.96"><forename type="first">Carrie</forename><surname>Cai</surname></persName>
+						</author>
+						<author>
+							<persName coords="1,396.22,160.20,59.24,8.96"><forename type="first">James</forename><surname>Wexler</surname></persName>
+						</author>
+						<author>
+							<persName coords="1,231.26,172.16,71.46,8.96"><forename type="first">Fernanda</forename><surname>Viegas</surname></persName>
+						</author>
+						<author>
+							<persName coords="1,311.85,172.16,52.11,8.96"><forename type="first">Rory</forename><surname>Sayres</surname></persName>
+						</author>
+						<title level="a" type="main">Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2018-06-07">7 Jun 2018</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">B01A2B03EF181C4F984CAB024634903D</idno>
+					<idno type="arXiv">arXiv:1711.11279v5[stat.ML]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.0" ident="GROBID" when="2024-02-14T16:51+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p><s coords="1,75.37,226.33,194.15,8.64;1,75.37,238.28,194.15,8.64;1,75.37,250.24,85.11,8.64">The interpretation of deep learning models is a challenge due to their size, complexity, and often opaque internal state.</s><s coords="1,163.59,250.24,107.17,8.64;1,75.37,262.19,195.80,8.64;1,75.37,274.15,148.11,8.64">In addition, many systems, such as image classifiers, operate on low-level features rather than high-level concepts.</s><s coords="1,226.56,274.15,42.95,8.64;1,75.37,286.10,195.80,8.64;1,75.37,298.06,195.80,8.64;1,75.37,310.01,194.15,8.64;1,75.37,321.97,100.41,8.64">To address these challenges, we introduce Concept Activation Vectors (CAVs), which provide an interpretation of a neural net's internal state in terms of human-friendly concepts.</s><s coords="1,178.86,321.97,91.01,8.64;1,75.37,333.92,194.14,8.64;1,75.37,345.88,105.60,8.64">The key idea is to view the high-dimensional internal state of a neural net as an aid, not an obstacle.</s><s coords="1,185.03,345.88,84.49,8.64;1,75.37,357.83,194.15,8.64;1,75.04,369.79,196.14,8.64;1,75.37,381.74,194.15,8.64;1,75.37,393.70,195.80,8.64;1,75.37,405.65,194.15,8.64;1,75.37,417.61,78.63,8.64">We show how to use CAVs as part of a technique, Testing with CAVs (TCAV), that uses directional derivatives to quantify the degree to which a user-defined concept is important to a classification result-for example, how sensitive a prediction of zebra is to the presence of stripes.</s><s coords="1,157.94,417.61,111.58,8.64;1,75.37,429.56,194.50,8.64;1,75.37,441.52,195.80,8.64;1,75.37,453.47,194.15,8.64;1,75.37,465.43,163.97,8.64">Using the domain of image classification as a testing ground, we describe how CAVs may be used to explore hypotheses and generate insights for a standard image classification network as well as a medical application.</s></p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="7" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="8" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="9" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="10" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="11" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="12" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="13" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="14" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="15" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="16" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="17" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="18" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1." coords="1,55.44,502.13,76.84,10.75">Introduction</head><p><s coords="1,55.44,523.27,234.00,8.64;1,55.11,535.23,234.33,8.64;1,55.44,547.18,41.20,8.64">Understanding the behavior of modern machine learning (ML) models, such as neural networks, remains a significant challenge.</s><s coords="1,99.72,547.18,191.37,8.64;1,55.44,559.14,235.74,8.64">Given the breadth and importance of ML applications, however, it is important to address this challenge.</s><s coords="1,55.44,571.09,235.66,8.64;1,55.44,583.05,235.24,8.64;1,55.44,595.00,234.00,8.64;1,55.44,606.96,165.49,8.64">In addition to ensuring accurate predictions, and giving scientists and engineers better means of designing, developing, and debugging models, interpretability is also important to ensure that ML models reflect our values.</s></p><p><s coords="1,55.44,624.89,234.00,8.64;1,55.44,636.84,234.00,8.64;1,55.44,648.80,40.92,8.64">One natural approach to interpretability is to describe an ML model's predictions in terms of the input features it considers.</s><s coords="1,101.96,648.80,188.73,8.64;1,55.44,660.75,234.00,8.64;1,55.44,672.71,63.02,8.64">For instance, in logistic regression classifiers, coefficient weights are often interpreted as the importance of each feature.</s><s coords="1,121.88,672.71,167.56,8.64;1,55.08,684.66,234.61,8.64;1,55.44,696.62,234.83,8.64;1,55.44,708.58,178.68,8.64">Similarly, saliency maps give importance weights to pixels based on first-order derivatives <ref type="bibr" coords="1,252.40,684.66,37.29,8.64;1,55.44,696.62,45.83,8.64" target="#b28">(Smilkov et al., 2017;</ref><ref type="bibr" coords="1,103.57,696.62,84.76,8.64" target="#b27">Selvaraju et al., 2016;</ref><ref type="bibr" coords="1,190.62,696.62,99.64,8.64" target="#b30">Sundararajan et al., 2017;</ref><ref type="bibr" coords="1,55.44,708.58,73.32,8.64" target="#b8">Erhan et al., 2009;</ref><ref type="bibr" coords="1,131.26,708.58,98.57,8.64" target="#b4">Dabkowski &amp; Gal, 2017)</ref>.</s></p><p><s coords="1,307.08,207.13,234.36,8.64;1,307.44,219.09,235.66,8.64;1,307.44,231.04,180.28,8.64">A key difficulty, however, is that most ML models operate on features, such as pixel values, that do not correspond to highlevel concepts that humans easily understand.</s><s coords="1,490.81,231.04,51.88,8.64;1,307.44,243.00,234.00,8.64;1,307.44,254.95,72.30,8.64">Furthermore, a model's internal values (e.g., neural activations) can seem incomprehensible.</s><s coords="1,382.84,254.95,160.25,8.64;1,307.44,266.91,234.00,8.64;1,307.44,278.54,234.00,9.65;1,307.44,290.82,175.80,8.64">We can express this difficulty mathematically, viewing the state of an ML model as a vector space E m spanned by basis vectors e m which correspond to data such as input features and neural activations.</s><s coords="1,486.32,290.82,55.37,8.64;1,307.44,302.45,234.00,9.65;1,307.44,314.41,234.00,9.65;1,307.44,326.68,37.35,8.64">Humans work in a different vector space E h spanned by implicit vectors e h corresponding to an unknown set of human-interpretable concepts.</s></p><p><s coords="1,307.44,344.62,234.00,8.64;1,307.44,356.25,151.11,9.65">From this standpoint, an "interpretation" of an ML model can be seen as function g : E m → E h .</s><s coords="1,461.58,356.25,79.86,8.96;1,307.44,368.14,125.86,9.03">When g is linear, we call it a linear interpretability.</s><s coords="1,436.36,368.53,106.74,8.64;1,307.44,380.16,234.00,8.96;1,307.44,392.12,234.00,9.65;1,307.44,404.39,234.00,8.64;1,307.44,416.03,15.01,9.65">In general, an interpretability function g need not be perfect <ref type="bibr" coords="1,447.17,380.48,81.15,8.64" target="#b5">(Doshi-Velez, 2017)</ref>; it may fail to explain some aspects of its input domain E m and it will unavoidably not cover all possible human concepts in E h .</s></p><p><s coords="1,307.44,433.96,235.65,9.65;1,307.44,446.24,234.17,8.64;1,307.44,458.19,43.92,8.64">In this work, the high-level concepts of E h are defined using sets of example input data for the ML model under inspection.</s><s coords="1,354.45,458.19,186.99,8.64;1,307.44,470.15,161.79,8.64">For instance, to define concept 'curly', a set of hairstyles and texture images can be used.</s><s coords="1,472.19,470.15,69.25,8.64;1,307.44,481.78,234.82,9.65;1,307.44,494.06,205.21,8.64">Note the concepts of E h are not constrained to input features or training data; they can be defined using new, user-provided data.</s><s coords="1,516.00,494.06,27.09,8.64;1,307.44,506.01,234.49,8.64;1,307.44,517.97,235.24,8.64;1,307.44,529.92,172.96,8.64">Examples are shown to be effective means of interfacing with ML models for both non-expert and expert users <ref type="bibr" coords="1,484.47,517.97,58.21,8.64;1,307.44,529.92,22.69,8.64" target="#b16">(Koh &amp; Liang, 2017;</ref><ref type="bibr" coords="1,332.63,529.92,67.25,8.64" target="#b12">Kim et al., 2014;</ref><ref type="bibr" coords="1,402.36,529.92,22.69,8.64">2015;</ref><ref type="bibr" coords="1,427.55,529.92,48.56,8.64" target="#b15">Klein, 1989)</ref>.</s><s coords="1,307.13,547.67,235.97,8.82;1,307.44,559.49,223.85,9.65">This work introduces the notion of a Concept Activation Vector (CAV) as a way of translating between E m and E h .</s><s coords="1,534.47,559.81,7.34,8.64;1,307.44,571.76,234.00,8.64;1,307.19,583.72,235.99,8.64">A CAV for a concept is simply a vector in the direction of the values (e.g., activations) of that concept's set of examples.</s><s coords="1,307.44,595.67,234.17,8.64;1,307.44,607.63,234.00,8.64;1,307.44,619.58,235.66,8.64;1,307.44,631.54,14.26,8.64">In this paper, we derive CAVs by training a linear classifier between a concept's examples and random counterexamples and then taking the vector orthogonal to the decision boundary.</s><s coords="1,324.70,631.54,216.74,8.64;1,307.44,643.50,234.83,8.64;1,307.44,655.45,154.25,8.64">This simple approach is supported by recent work using local linearity <ref type="bibr" coords="1,366.15,643.50,96.53,8.64" target="#b1">(Alain &amp; Bengio, 2016;</ref><ref type="bibr" coords="1,465.21,643.50,77.06,8.64" target="#b23">Raghu et al., 2017;</ref><ref type="bibr" coords="1,307.44,655.45,65.58,8.64" target="#b2">Bau et al., 2017;</ref><ref type="bibr" coords="1,375.51,655.45,81.89,8.64" target="#b31">Szegedy et al., 2013)</ref>.</s></p><p><s coords="1,307.13,673.38,234.66,8.64;1,307.44,685.16,234.00,8.82;1,307.44,697.29,40.52,8.64">The main result of this paper is a new linear interpretability method, quantitative Testing with CAV (TCAV) (outlined in Figure <ref type="figure" coords="1,336.95,697.29,3.67,8.64" target="#fig_0">1</ref>).</s><s coords="1,352.50,697.11,189.29,8.82;2,55.44,419.51,232.86,8.64">TCAV uses directional derivatives to quantify Our work on TCAV was pursued with the following goals.</s></p><p><s coords="2,60.42,432.57,225.97,9.03">Accessibility: Requires little to no ML expertise of user.</s></p><p><s coords="2,60.42,446.77,229.02,9.03;2,75.37,459.11,210.31,8.64">Customization: Adapts to any concept (e.g., gender) and is not limited to concepts considered during training.</s><s coords="2,60.42,472.92,230.67,9.03;2,75.37,485.27,102.66,8.64">Plug-in readiness: Works without any retraining or modification of the ML model.</s><s coords="2,60.42,499.07,229.02,9.03;2,75.37,511.42,214.07,8.64;2,75.37,523.37,152.37,8.64">Global quantification: Can interpret entire classes or sets of examples with a single quantitative measure, and not just explain individual data inputs.</s><s coords="2,54.97,536.82,234.47,8.64;2,55.44,548.78,235.65,8.64;2,55.44,560.73,235.25,8.64;2,55.44,572.69,193.90,8.64">We perform experiments using TCAV to gain insights and reveal dataset biases in widely-used neural network models and with a medical application (diabetic retinopathy), confirming our findings with a domain expert.</s><s coords="2,256.04,572.69,35.06,8.64;2,55.44,584.64,234.00,8.64;2,55.44,596.60,217.18,8.64">We conduct human subject experiments to quantitatively evaluate feature-based explanations and to contrast with TCAV.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2." coords="2,55.44,623.40,80.57,10.75">Related work</head><p><s coords="2,55.44,644.54,235.65,8.64;2,55.44,656.49,235.25,8.64;2,55.44,668.45,235.65,8.64;2,55.08,680.40,26.74,8.64">In this section, we provide an overview of existing interpretability methods, methods specific to neural networks, and methods that leverage the local linearity of neural networks.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1." coords="2,307.44,305.55,122.03,8.96">Interpretability methods</head><p><s coords="2,307.13,324.59,234.31,8.64;2,307.44,336.55,235.65,8.64;2,307.44,348.50,180.07,8.64">To achieve interpretability, we have two options: (1) restrict ourselves to inherently interpretable models or (2) postprocess our models in way that yields insights.</s><s coords="2,490.48,348.50,50.96,8.64;2,306.69,360.46,234.75,8.64;2,307.44,372.41,235.25,8.64;2,306.69,384.37,235.99,8.64;2,307.44,396.32,234.35,8.64;2,307.44,408.28,166.78,8.64">While option 1 offers simplicity as the explanation is embedded in the model <ref type="bibr" coords="2,333.77,372.41,67.60,8.64" target="#b12">(Kim et al., 2014;</ref><ref type="bibr" coords="2,403.30,372.41,95.23,8.64" target="#b6">Doshi-Velez et al., 2015;</ref><ref type="bibr" coords="2,500.46,372.41,42.23,8.64;2,306.69,384.37,23.15,8.64" target="#b34">Tibshirani, 1994;</ref><ref type="bibr" coords="2,332.82,384.37,68.22,8.64" target="#b38">Zou et al., 2004;</ref><ref type="bibr" coords="2,404.01,384.37,76.12,8.64" target="#b35">Ustun et al., 2013;</ref><ref type="bibr" coords="2,483.11,384.37,59.57,8.64;2,307.44,396.32,21.87,8.64" target="#b3">Caruana et al., 2015)</ref>, this option might be costly for users who already have a working high performance model.</s><s coords="2,477.32,408.28,64.12,8.64;2,307.44,420.23,235.24,8.64;2,307.44,432.19,234.00,8.64;2,307.44,444.14,210.48,8.64">With increasing demands for more explainable ML <ref type="bibr" coords="2,449.22,420.23,93.47,8.64;2,307.44,432.19,21.87,8.64" target="#b10">(Goodman &amp; Flaxman, 2016)</ref>, there is an growing need for methods that can be applied without retraining or modifying the network.</s></p><p><s coords="2,307.44,462.08,234.00,8.64;2,307.44,474.03,235.75,8.64">One of many challenges of option 2 is to ensure that the explanation correctly reflects the model's complex internals.</s><s coords="2,307.44,485.99,235.65,8.64;2,307.44,497.94,235.65,8.64;2,307.44,509.90,17.78,8.64">One way to address this is to use the generated explanation as an input, and check the network's output for validation.</s><s coords="2,328.33,509.90,213.47,8.64;2,307.44,521.85,234.00,8.64;2,307.44,533.81,234.83,8.64;2,307.44,545.76,234.25,8.64;2,307.44,557.72,153.45,8.64">This is typically used in perturbation-based/sensitivity analysis-based interpretability methods to either use data points <ref type="bibr" coords="2,333.60,533.81,82.17,8.64" target="#b16">(Koh &amp; Liang, 2017)</ref> or features <ref type="bibr" coords="2,461.65,533.81,80.62,8.64" target="#b24">(Ribeiro et al., 2016;</ref><ref type="bibr" coords="2,307.44,545.76,91.94,8.64" target="#b19">Lundberg &amp; Lee, 2017)</ref> as a form of perturbation, and check how the network's response changes.</s><s coords="2,466.24,557.72,75.20,8.64;2,307.44,569.67,234.00,8.64;2,307.44,581.63,234.00,8.64;2,307.44,593.58,188.97,8.64">They maintain the consistency either locally (i.e., explanation is true for a data point and its neighbors) or globally (i.e., explanation is true for most data points in a class) by construction.</s><s coords="2,499.50,593.58,41.95,8.64;2,307.44,605.54,234.00,8.64;2,307.44,617.49,235.75,8.64">TCAV is a type of global perturbation method, as it perturbs data points towards a human-relatable concept to generate explanations.</s></p><p><s coords="2,307.44,635.43,235.66,8.64;2,307.44,647.38,234.00,8.64;2,307.44,659.34,235.65,8.64;2,307.44,671.29,158.35,8.64">However, even a perturbation-based method can be inconsistent if the explanation is only true for a particular data point and its neighbors <ref type="bibr" coords="2,378.85,659.34,159.92,8.64;2,307.44,671.29,18.06,8.64">(Ribeiro et al., 2016) (i.e., local explanation)</ref>, and not for all inputs in the class.</s><s coords="2,468.88,671.29,72.91,8.64;2,307.44,683.25,234.00,8.64;2,307.44,695.20,204.83,8.64">For example, they may generate contradicting explanations for two data points in the same class, resulting in decreased user trust.</s><s coords="2,515.48,695.20,26.32,8.64;2,307.44,707.16,234.00,8.64;3,55.44,70.54,215.19,8.64">TCAV produces explanations that are not only true for a single data point, but true for each class (i.e., global explanation).</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2." coords="3,55.44,95.28,204.68,8.96">Interpretability methods in neural networks</head><p><s coords="3,55.13,114.00,233.81,9.65;3,55.44,126.28,157.98,8.64">The goal of TCAV is to interpret high dimensional E m such as that of neural network models.</s><s coords="3,217.37,126.28,72.07,8.64;3,55.44,138.23,234.17,8.64;3,55.44,150.19,234.83,8.64;3,55.44,162.14,234.00,8.64;3,55.05,174.10,57.24,8.64">Saliency methods are one of the most popular local explanation methods for image classification <ref type="bibr" coords="3,134.31,150.19,73.83,8.64" target="#b8">(Erhan et al., 2009;</ref><ref type="bibr" coords="3,210.16,150.19,80.11,8.64" target="#b28">Smilkov et al., 2017;</ref><ref type="bibr" coords="3,55.44,162.14,85.09,8.64" target="#b27">Selvaraju et al., 2016;</ref><ref type="bibr" coords="3,142.94,162.14,99.97,8.64" target="#b30">Sundararajan et al., 2017;</ref><ref type="bibr" coords="3,245.32,162.14,44.12,8.64;3,55.05,174.10,52.87,8.64" target="#b4">Dabkowski &amp; Gal, 2017)</ref>.</s><s coords="3,116.72,174.10,172.71,8.64;3,55.44,186.05,234.00,8.64;3,55.44,198.01,165.95,8.64">These techniques typically produce a map showing how important each pixel of a particular picture is for its classification, as shown in Figure <ref type="figure" coords="3,214.03,198.01,3.68,8.64" target="#fig_6">8</ref>.</s><s coords="3,224.48,198.01,65.31,8.64;3,55.44,209.96,234.00,8.64;3,55.44,221.92,234.00,8.64;3,55.44,233.88,234.00,8.64;3,55.44,245.65,235.25,8.82;3,55.44,257.79,234.00,8.64;3,55.44,269.74,234.00,8.64;3,55.44,281.70,234.25,8.64;3,55.44,293.65,70.85,8.64">While a saliency map often identifies relevant regions and provides a type of quantification (i.e., importance for each pixel), there are a couple of limitations: 1) since a saliency map is given conditioned on only one picture (i.e., local explanation), humans have to manually assess each picture in order to draw a class-wide conclusion, and 2) users have no control over what concepts of interest these maps pick up on (lack of customization).</s><s coords="3,129.30,293.65,160.14,8.64;3,55.44,305.61,234.00,8.64;3,55.44,317.56,97.01,8.64">For example, consider two saliency maps of two different cat pictures, with one picture's cat ears having more brightness.</s><s coords="3,155.56,317.56,133.87,8.64;3,55.44,329.52,147.73,8.64">Can we assess how important the ears were in the prediction of "cats"?</s><s coords="3,55.44,347.45,234.00,8.64;3,55.44,359.40,234.17,8.64;3,55.44,371.36,234.00,8.64;3,55.44,383.31,234.00,8.64;3,55.44,395.27,234.00,8.64;3,55.44,407.23,136.72,8.64">Furthermore, some recent work has demonstrated that saliency maps produced by randomized networks are similar to that of the trained network <ref type="bibr" coords="3,174.64,371.36,86.30,8.64" target="#b0">(Adebayo et al., 2018)</ref>, while simple meaningless data processing steps, such as mean shift, may cause saliency methods to result in significant changes <ref type="bibr" coords="3,89.41,407.23,98.54,8.64" target="#b14">(Kindermans et al., 2017)</ref>.</s><s coords="3,195.25,407.23,94.19,8.64;3,55.44,419.18,235.74,8.64">Saliency maps may also be vulnerable to adversarial attacks <ref type="bibr" coords="3,197.92,419.18,88.98,8.64" target="#b9">(Ghorbani et al., 2017)</ref>.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3." coords="3,55.44,443.92,231.55,8.96">Linearity in neural network and latent dimensions</head><p><s coords="3,55.13,462.97,234.47,8.64;3,55.44,474.92,234.00,8.64;3,55.44,486.88,234.83,8.64;3,55.44,498.83,235.74,8.64">There has been much research demonstrating that linear combinations of neurons may encode meaningful, insightful information <ref type="bibr" coords="3,106.98,486.88,99.61,8.64" target="#b1">(Alain &amp; Bengio, 2016;</ref><ref type="bibr" coords="3,210.14,486.88,80.13,8.64" target="#b23">Raghu et al., 2017;</ref><ref type="bibr" coords="3,55.44,498.83,67.34,8.64" target="#b2">Bau et al., 2017;</ref><ref type="bibr" coords="3,125.47,498.83,85.25,8.64" target="#b31">Szegedy et al., 2013;</ref><ref type="bibr" coords="3,213.41,498.83,73.40,8.64" target="#b7">Engel et al., 2017)</ref>.</s><s coords="3,55.44,510.79,234.36,8.64;3,55.44,522.74,234.00,8.64;3,55.44,534.70,100.87,8.64">Both <ref type="bibr" coords="3,77.81,510.79,71.02,8.64" target="#b2">(Bau et al., 2017)</ref> and <ref type="bibr" coords="3,168.71,510.79,97.28,8.64" target="#b1">(Alain &amp; Bengio, 2016)</ref> show that meaningful directions can be efficiently learned via simple linear classifiers.</s><s coords="3,163.95,534.70,125.49,8.64;3,55.44,546.65,234.00,8.64;3,55.08,558.61,234.36,8.64;3,55.44,570.56,206.01,8.64">Mapping latent dimensions to human concepts has also been studied in the context of words <ref type="bibr" coords="3,81.29,558.61,83.96,8.64" target="#b20">(Mikolov et al., 2013)</ref>, and in the context of GANs to generate attribute-specific pictures <ref type="bibr" coords="3,191.55,570.56,65.69,8.64" target="#b37">(Zhu et al., 2017)</ref>.</s><s coords="3,264.44,570.56,26.65,8.64;3,55.44,582.52,234.00,8.64;3,55.44,594.47,235.66,8.64;3,55.44,606.43,64.75,8.64">A similar idea to using such concept vectors in latent dimension in the context of generative model has also been explored <ref type="bibr" coords="3,273.64,594.47,13.09,8.64;3,55.44,606.43,60.46,8.64" target="#b7">(Engel et al., 2017)</ref>.</s></p><p><s coords="3,55.44,624.36,235.66,8.64;3,55.44,636.32,234.00,8.64;3,55.44,648.27,217.93,8.64">Our work extends this idea and computes directional derivatives along these learned directions in order to gather the importance of each direction for a model's prediction.</s><s coords="3,276.47,648.27,14.62,8.64;3,55.44,660.23,234.00,8.64;3,55.44,672.18,234.00,8.64;3,55.44,684.14,234.00,8.64;3,55.44,696.09,234.18,8.64">Using TCAV's framework, we can conduct hypothesis testing on any concept on the fly (customization) that make sense to the user (accessibility) for a trained network (plug-in readiness) and produce a global explanation for each class.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3." coords="3,307.44,68.77,56.45,10.75">Methods</head><p><s coords="3,307.13,89.91,234.31,8.64;3,307.44,101.87,234.49,8.64;3,307.44,113.82,234.00,8.64;3,307.11,125.78,234.11,8.64;3,307.44,137.73,234.00,8.64;3,307.44,149.69,234.17,8.64;3,307.44,161.64,52.86,8.64">This section explains our ideas and methods: (a) how to use directional derivatives to quantify the sensitivity of ML model predictions for different user-defined concepts, and (b) how to compute a final quantitative explanation (TCAVQ measure) of the relative importance of each concept to each model prediction class, without any model retraining or modification.</s></p><p><s coords="3,306.97,179.57,236.13,8.64;3,307.44,191.18,89.81,9.33;3,397.25,189.64,4.92,6.12;3,405.49,191.21,135.95,8.96;3,307.44,203.17,234.00,8.96;3,307.44,215.12,125.24,9.65;3,432.68,213.55,4.92,6.12;3,440.87,215.12,19.93,9.30;3,460.80,213.55,7.07,6.12;3,468.36,215.44,2.49,8.64">Without loss of generality, we consider neural network models with inputs x ∈ R n and a feedforward layer l with m neurons, such that input inference and its layer l activations can be seen as a function f l : R n → R m .</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1." coords="3,307.44,240.18,198.87,8.96">User-defined Concepts as Sets of Examples</head><p><s coords="3,307.13,259.23,235.96,8.64;3,307.44,271.18,24.55,8.64">The first step in our method is to define a concept of interest.</s><s coords="3,337.28,271.18,204.16,8.64;3,307.44,283.14,234.00,8.64;3,307.08,295.09,99.26,8.64">We do this simply by choosing a set of examples that represent this concept or find an independent data set with the concept labeled.</s><s coords="3,409.45,295.09,131.99,8.64;3,307.44,307.05,234.00,8.64;3,307.44,319.00,234.00,8.64;3,307.44,330.96,110.68,8.64">The key benefit of this strategy is that it does not restrict model interpretations to explanations using only pre-existing features, labels, or training data of the model under inspection.</s></p><p><s coords="3,307.44,348.89,234.48,8.64;3,307.44,360.84,235.65,8.64;3,307.44,372.80,234.00,8.64;3,307.44,384.75,34.24,8.64">Instead, there is great flexibility for even non-expert ML model analysts to define concepts using examples and explore and refine concepts as they test hypotheses during analysis.</s><s coords="3,344.77,384.75,196.67,8.64;3,307.44,396.71,235.74,8.64">Section 4 describes results from experiments with small number of images (30) collected using a search engine.</s><s coords="3,307.44,408.67,234.00,8.64;3,307.44,420.62,235.25,8.64;3,307.44,432.58,25.73,8.64">For the case of fairness analysis (e.g., gender, protected groups), curated examples are readily available <ref type="bibr" coords="3,490.60,420.62,52.09,8.64;3,307.44,432.58,21.44,8.64" target="#b11">(Huang et al., 2007)</ref>.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2." coords="3,307.44,457.32,166.68,8.96">Concept Activation Vectors (CAVs)</head><p><s coords="3,307.44,476.36,234.00,8.64;3,307.44,488.32,235.25,8.64;3,307.08,499.95,234.36,8.96;3,307.44,512.23,94.19,8.64">Following the approach of linear interpretability, given a set of examples representing a concept of human interest, we seek a vector in the space of activations of layer l that represents this concept.</s><s coords="3,404.72,512.23,136.89,8.64;3,307.44,523.86,234.00,8.96;3,307.44,536.14,171.70,8.64">To find such a vector, we consider the activations in layer l produced by input examples that in the concept set versus random examples.</s><s coords="3,482.24,536.14,59.20,8.64;3,307.44,548.09,234.00,8.64;3,307.44,559.87,234.00,8.82;3,307.44,571.82,234.00,8.82;3,307.44,583.96,75.01,8.64">We then define a "concept activation vector" (or CAV) as the normal to a hyperplane separating examples without a concept and examples with a concept in the model's activations (see red arrow in Figure <ref type="figure" coords="3,371.66,583.96,3.60,8.64" target="#fig_0">1</ref>).</s><s coords="3,307.13,601.89,236.05,8.64">This approach lends itself to a natural implementation.</s><s coords="3,306.97,613.53,234.47,8.96;3,307.44,625.80,234.00,8.64;3,307.44,637.44,232.91,9.65;3,307.11,649.71,114.76,8.64">When an analyst is interested in a concept C (say, striped textures) they may gather a positive set of example inputs P C (e.g., photos of striped objects) and and a negative set N (e.g., a set of random photos).</s><s coords="3,424.79,649.71,116.82,8.64;3,307.44,661.67,234.00,8.64;3,307.44,673.30,98.36,9.65">Then, a binary linear classifier can be trained to distinguish between the layer activations of the two sets: {f l (x) :</s></p><formula xml:id="formula_0" coords="3,408.82,671.95,132.65,11.00">x ∈ P C } and {f l (x) : x ∈ N }. 1 This classifier v l C ∈ R m is a linear CAV for the concept C.</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3." coords="4,55.44,95.28,231.50,8.96">Directional Derivatives and Conceptual Sensitivity</head><p><s coords="4,55.44,114.32,234.00,8.64;4,55.44,126.28,234.00,8.64;4,55.44,138.23,79.82,8.64">Interpretability methods like saliency maps use the gradients of logit values with respect to individual input features, like pixels, and compute</s></p><formula xml:id="formula_1" coords="4,157.04,141.87,30.80,23.22">∂h k (x) ∂x a,b</formula><p><s coords="4,55.08,170.53,234.36,9.68;4,55.44,182.48,150.45,9.68">where h k (x) is the logit for a data point x for class k and x a,b is a pixel at position (a, b) in x.</s><s coords="4,210.10,182.83,79.34,8.64;4,55.44,194.47,233.69,8.96;4,55.44,206.42,171.55,8.96">Thus, saliency uses the derivative to gauge the sensitivity of the output class k to changes in the magnitude of pixel (a, b).</s></p><p><s coords="4,55.44,224.67,234.00,8.64;4,55.44,236.63,235.65,8.64;4,55.08,248.26,236.10,8.96">By using CAVs and directional derivatives, we instead gauge the sensitivity of ML predictions to changes in inputs towards the direction of a concept, at neural activation layer l.</s></p><p><s coords="4,55.44,260.19,14.67,8.99;4,70.48,258.64,2.52,6.12;4,70.12,265.00,5.71,6.12;4,79.58,260.22,16.60,9.30;4,96.19,258.64,7.07,6.12;4,106.24,260.22,184.44,8.96;4,55.44,272.14,235.65,9.68;4,55.44,284.13,234.00,8.96;4,55.44,296.08,142.36,9.65">If v l C ∈ R m is a unit CAV vector for a concept C in layer l, and f l (x) the activations for input x at layer l, the "conceptual sensitivity" of class k to concept C can be computed as the directional derivative S C,k,l (x):</s></p><formula xml:id="formula_2" coords="4,63.83,312.48,225.61,39.03">S C,k,l (x) = lim →0 h l,k (f l (x) + v l C ) -h l,k (f l (x)) = ∇h l,k (f l (x)) • v l C ,<label>(1)</label></formula><p><s coords="4,55.08,364.34,60.64,9.65;4,115.72,362.76,7.07,6.12;4,126.94,364.34,23.35,9.30">where h l,k : R m → R.</s><s coords="4,154.82,364.34,134.97,9.65;4,55.44,376.61,234.00,8.64;4,55.44,388.57,125.93,8.64">This S C,k,l (x) can quantitatively measure the sensitivity of model predictions with respect to concepts at any model layer.</s><s coords="4,184.72,388.57,106.37,8.64;4,55.44,400.52,234.00,8.64;4,55.44,412.48,235.75,8.64">It is not a per-feature metric (e.g., unlike per-pixel saliency maps) but a per-concept scalar quantity computed on a whole input or sets of inputs.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4." coords="4,55.44,437.22,131.78,8.96">Testing with CAVs (TCAV)</head><p><s coords="4,55.13,456.26,234.31,8.64;4,55.44,468.22,234.00,8.64;4,55.44,480.17,69.72,8.64">Testing with CAVs, or TCAV, uses directional derivatives to compute ML models' conceptual sensitivity across entire classes of inputs.</s><s coords="4,129.26,479.85,161.84,8.96;4,55.19,491.81,234.25,9.65;4,55.44,504.08,46.09,8.64">Let k be a class label for a given supervised learning task and let X k denote all inputs with that given label.</s><s coords="4,104.62,504.08,128.45,8.64">We define the TCAV score to be</s></p><formula xml:id="formula_3" coords="4,84.19,523.64,205.25,23.22">TCAVQ C,k,l = |{x ∈ X k : S C,k,l (x) &gt; 0}| |X k |<label>(2)</label></formula><p><s coords="4,55.44,556.87,235.66,8.96;4,55.19,568.83,235.49,8.96;4,55.13,580.78,84.26,9.92">i.e. the fraction of k-class inputs whose l-layer activation vector was positively influenced by concept C, TCAVQ C,k,l ∈ [0, 1].</s><s coords="4,143.40,581.10,146.04,9.61;4,55.44,592.74,234.00,9.65;4,55.44,605.01,235.65,8.64;4,55.44,616.97,16.66,8.64">Note that TCAVQ C,k,l only depends on the sign of S C,k,l , one could also use a different metric that considers the magnitude of the conceptual sensitivities.</s><s coords="4,75.55,616.97,213.89,8.64;4,55.44,628.92,213.34,8.64">The TCAVQ metric allows conceptual sensitivities to be easily interpreted, globally for all inputs in a label.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.5." coords="4,55.44,653.67,141.97,8.96">Statistical significance testing</head><p><s coords="4,55.44,672.71,234.17,8.64;4,55.44,684.66,118.84,8.64">One pitfall with the TCAV technique is the potential for learning a meaningless CAV.</s><s coords="4,177.42,684.66,112.37,8.64;4,55.44,696.62,182.86,8.64">After all, using a randomly chosen set of images will still produce a CAV.</s><s coords="4,240.79,696.62,48.65,8.64;4,55.44,708.58,220.71,8.64">A test based on such a random concept is unlikely to be meaningful.</s><s coords="4,307.44,159.88,234.35,8.96;4,307.44,172.16,155.74,8.64">Concretely we perform a two-sided t-test of the TCAV scores based on these multiple samples.</s><s coords="4,466.27,172.16,75.17,8.64;4,307.44,184.11,234.17,8.64;4,307.44,196.07,234.00,8.64;4,307.44,208.02,64.29,8.64">If we can reject the null hypothesis of a TCAV score of 0.5, we can consider the resulting concept as related to the class prediction in a significant way.</s><s coords="4,377.03,208.02,164.41,8.64;4,307.44,219.66,234.00,8.96;4,307.44,231.93,152.13,8.64">Note that we also perform a Bonferroni correction for our hypotheses (at p &lt; α/m with m = 2) to control the false discovery rate further.</s><s coords="4,462.66,231.93,78.78,8.64;4,307.44,243.89,174.64,8.64">All results shown in this paper are CAVs that passed this testing.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.6." coords="4,307.44,268.63,160.77,8.96">TCAV extensions: Relative TCAV</head><p><s coords="4,307.44,287.67,234.17,8.64;4,307.19,299.63,235.99,8.64">In practice, semantically related concepts (e.g., brown hair vs. black hair) often yield CAVs that are far from orthogonal.</s><s coords="4,307.13,311.58,234.31,8.64;4,307.44,323.54,234.00,8.64;4,307.44,335.49,234.00,8.64;4,307.44,347.45,234.83,8.64;4,307.44,359.40,89.95,8.64">This natural, expected property may be beneficially used to make fine-grained distinctions since relative comparisons between related concepts are a good interpretative tool <ref type="bibr" coords="4,520.83,335.49,20.61,8.64;4,307.44,347.45,50.82,8.64" target="#b13">(Kim et al., 2015;</ref><ref type="bibr" coords="4,362.21,347.45,105.02,8.64" target="#b6">Doshi-Velez et al., 2015;</ref><ref type="bibr" coords="4,471.20,347.45,71.07,8.64" target="#b34">Tibshirani, 1994;</ref><ref type="bibr" coords="4,307.44,359.40,85.66,8.64" target="#b26">Salvatore et al., 2014)</ref>.</s></p><p><s coords="4,307.13,377.16,236.05,8.82">Relative CAVs allow making such fine-grained comparisons.</s></p><p><s coords="4,307.44,389.29,234.00,8.64;4,307.44,400.93,233.99,8.96;4,307.44,412.85,144.46,9.68;4,452.27,411.31,2.52,6.12;4,451.90,417.67,14.66,6.12;4,470.04,412.88,16.60,9.30;4,486.64,411.31,7.07,6.12;4,494.21,413.20,2.44,8.64">Here the analyst selects two sets of inputs that represent two different concepts, C and D. Training a classifier on f l (P C ) and f l (P D ) yields a vector v l C,D ∈ R m .</s><s coords="4,499.72,413.20,41.88,8.64;4,307.44,426.41,5.65,8.77;4,313.46,424.86,2.52,6.12;4,313.09,431.22,14.65,6.12;4,331.99,426.44,209.45,8.96;4,307.44,438.39,234.00,9.65;4,307.44,450.32,225.22,8.99">The vector v l C,D intuitively defines a 1-d subspace in layer l where the projection of an embedding f l (x) along this subspace measures whether x is more relevant to concept C or D.</s></p><p><s coords="4,307.44,468.60,235.65,8.64;4,307.44,480.56,235.25,8.64;4,305.79,492.51,235.66,8.64;4,307.44,504.47,204.35,8.64">Relative CAVs may, for example, apply to image recognition, where we can hypothesize that concepts for 'dotted', 'striped', and 'meshed' textures are likely to exist as internal representations, and be correlated or overlapping.</s><s coords="4,517.00,504.47,24.44,8.64;4,307.44,516.10,234.00,9.81;4,307.44,528.38,235.66,8.64;4,307.44,540.01,235.75,9.81">Given three positive example sets P dot , P stripe , and P mesh , a relative CAV can be derived by constructing, for each, a negative input set by complement (e.g., {P dot ∪ P mesh } for the stripes).</s><s coords="4,307.13,552.29,234.67,8.64;4,307.44,564.24,235.65,8.64;4,307.44,576.20,234.00,8.64;4,307.44,588.15,235.66,8.64;4,307.44,600.11,14.53,8.64">The TCAVQ measures enabled by the resulting relative CAV are used in many of the experiments in the following Section 4, e.g., to gauge the relative importance of stripes to zebras and that of diagnostic concepts for diabetic retinopathy.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4." coords="4,307.44,626.91,49.15,10.75">Results</head><p><s coords="4,306.97,648.05,236.12,8.64;4,307.44,660.00,234.17,8.64;4,307.44,671.96,169.61,8.64">We first show evidence that CAVs align with intended concepts of interest, by sorting images based on how similar they are to various concepts (Section 4.1.1)</s><s coords="4,479.55,671.96,61.89,8.64;4,307.44,683.73,235.25,8.82;4,307.44,695.87,118.44,8.64">and by using an activation maximization technique, empirical deep dream, on the CAVs (Section 4.1.2).</s><s coords="4,430.25,695.87,111.19,8.64;4,307.44,707.82,234.00,8.64;5,55.44,70.54,113.20,8.64">We then summarize gained insights and revealed biases of two widely used networks using TCAV (Section 4.2.1).</s><s coords="5,171.74,70.54,119.36,8.64;5,55.44,82.49,234.00,8.64;5,55.44,94.45,96.67,8.64">For further validation, we create a dataset and settings where we have an approximated ground truth for TCAVQ.</s><s coords="5,155.06,94.45,134.38,8.64;5,55.44,106.40,132.66,8.64">We show that TCAV closely tracks the ground truth (Section 4.3.1)</s><s coords="5,191.04,106.40,98.40,8.64;5,55.44,118.36,235.65,8.64;5,55.44,130.31,42.46,8.64">while saliency maps are unable to communicate this ground truth to humans (Section 4.3.2).</s><s coords="5,100.84,130.31,188.60,8.64;5,55.44,142.27,234.00,8.64;5,55.13,154.22,234.31,8.64;5,55.44,166.18,112.22,8.64">Finally we apply TCAV to help interpret a model predicting diabetic retinopathy (DR) (Section 4.4), where TCAV provided insights when the model diverged with the domain expert's knowledge.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1." coords="5,55.44,190.92,138.07,8.96">Validating the learned CAVs</head><p><s coords="5,55.13,209.96,234.31,8.64;5,55.44,221.92,199.64,8.64">The first step is to convince ourselves that the learned CAVs are aligned with the intended concepts of interest.</s><s coords="5,258.16,221.92,31.27,8.64;5,55.44,233.88,235.66,8.64;5,55.44,245.83,18.35,8.64">We first sort the images of any class with respect to CAVs for inspection.</s><s coords="5,77.32,245.83,212.12,8.64;5,55.44,257.79,234.17,8.64;5,55.19,269.74,79.70,8.64">Then we learn patterns that maximally activate each CAV using an activation maximization technique for further visual confirmation.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.1." coords="5,55.69,293.43,155.55,8.64">SORTING IMAGES WITH CAVS</head><p><s coords="5,54.97,312.09,234.47,8.64;5,55.44,324.04,60.06,8.64">We can use CAVs to sort images with respect to their relation to the concept.</s><s coords="5,119.50,324.04,169.94,8.64;5,55.44,336.00,219.20,8.64">This is useful for qualitative confirmation that the CAVs correctly reflect the concept of interest.</s><s coords="5,278.15,336.00,11.29,8.64;5,55.44,347.95,234.17,8.64;5,55.44,359.59,98.32,8.96;5,154.12,358.01,2.52,6.12;5,153.76,364.37,5.71,6.12;5,164.59,359.59,17.96,9.30;5,182.55,358.01,7.07,6.12;5,193.34,359.91,96.10,8.64;5,55.44,371.54,127.67,9.65;5,183.11,369.97,7.07,6.12;5,193.18,371.86,97.51,8.64;5,55.08,383.82,234.36,8.64;5,55.44,395.77,174.86,8.64">As a CAV encodes the direction of a concept in the vector space of a bottleneck, v l C ∈ R m using the activations of the concept pictures, f l (x i ) ∈ R m as described Section 3.2, we can compute cosine similarity between a set of pictures of interest to the CAV to sort the pictures.</s><s coords="5,235.58,395.77,53.86,8.64;5,55.44,407.73,202.68,8.64">Note that the pictures being sorted are not used to train the CAV.</s><s coords="5,55.13,540.70,234.31,8.64;5,55.44,552.66,235.25,8.64;5,53.79,564.61,142.52,8.64">The left of Figure <ref type="figure" coords="5,132.70,540.70,5.08,8.64" target="#fig_1">2</ref> shows sorted images of stripes with respect to a CAV learned from a more abstract concept, 'CEO' (collected from ImageNet).</s><s coords="5,201.55,564.61,87.89,8.64;5,55.44,576.57,234.00,8.64;5,55.44,588.52,42.30,8.64">The top 3 images are pinstripes which may relate to the ties or suits that a CEO may wear.</s><s coords="5,102.57,588.52,186.87,8.64;5,55.44,600.48,194.83,8.64">The right of Figure <ref type="figure" coords="5,184.84,588.52,5.08,8.64" target="#fig_1">2</ref> shows sorted images of neckties with respect to a 'model women' CAV.</s><s coords="5,252.98,600.48,36.46,8.64;5,55.44,612.43,131.09,8.64">All top 3 images show women in neckties.</s></p><p><s coords="5,55.13,630.36,235.96,8.64;5,55.44,642.32,234.00,8.64;5,55.44,654.27,157.20,8.64">This also suggests that CAVs can be as a standalone similarity sorter, to sort images to reveal any biases in the example images from which the CAV is learned.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.2." coords="5,55.69,677.97,137.01,8.64">EMPIRICAL DEEP DREAM</head><p><s coords="5,55.08,696.62,234.36,8.64;5,55.44,708.58,234.36,8.64;5,307.44,70.54,235.74,8.64">Another way to visually confirm our confidence in a CAV is to optimize for a pattern that maximally activates the CAV and compare that to our semantic notions of the concept.</s><s coords="5,307.08,82.49,234.52,8.64;5,307.44,94.45,234.00,8.64;5,307.44,106.40,234.00,8.64;5,307.44,118.36,173.14,8.64">Activation maximization techniques, such as Deep Dream or Lucid <ref type="bibr" coords="5,332.40,94.45,100.69,8.64" target="#b21">(Mordvintsev et al., 2015;</ref><ref type="bibr" coords="5,435.28,94.45,65.54,8.64" target="#b22">Olah et al., 2017)</ref>, are often used to visualize patterns that would maximally activate a neuron, set of neurons or random directions.</s><s coords="5,483.66,118.36,57.78,8.64;5,307.44,130.31,220.17,8.64">This technique is also applied to AI-aided art <ref type="bibr" coords="5,424.01,130.31,99.40,8.64" target="#b21">(Mordvintsev et al., 2015)</ref>.</s><s coords="5,530.59,130.31,10.85,8.64;5,307.44,142.27,234.00,8.64;5,307.44,154.22,230.10,8.64">As is typically done, we use a random image as a starting point for the optimization to avoid choosing an arbitrary image.</s></p><p><s coords="5,307.44,172.16,234.17,8.64;5,307.44,184.11,126.45,8.64">Using this technique, we show that CAVs do reflect their underlying concepts of interest.</s><s coords="5,436.98,184.11,104.47,8.64;5,307.44,196.07,234.00,8.64;5,307.44,208.02,96.12,8.64">Figure <ref type="figure" coords="5,465.66,184.11,5.02,8.64" target="#fig_2">3</ref> shows the results of deep dreamed patterns for knitted texture, corgis and Siberian huskey CAVs.</s><s coords="5,409.84,208.02,133.25,8.64;5,307.44,219.98,174.29,8.64">We include results from all layers and many other CAVs in the appendix.</s><s coords="5,486.03,219.98,55.40,8.64;5,307.44,231.93,234.00,8.64;5,307.44,243.89,80.80,8.64">This suggests that TCAV can be used to identify and visualize interesting directions in a layer.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2." coords="5,307.44,382.68,225.84,8.96;5,324.88,394.64,99.80,8.96">Insights and biases: TCAV for widely used image classifications networks</head><p><s coords="5,307.44,413.68,234.00,8.64;5,306.69,425.63,235.41,8.64;5,307.44,437.59,206.04,8.64">In this section, we apply TCAV to two popular networks to 1) further confirm TCAV's utility, 2) reveal biases, and 3) show where concepts are learned in these networks.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.1." coords="5,307.69,461.28,168.66,8.64">GAINING INSIGHTS USING TCAV</head><p><s coords="5,306.97,479.93,234.82,8.64;5,307.44,491.89,79.47,8.64">We applied TCAV for two widely used networks <ref type="bibr" coords="5,504.61,479.93,37.18,8.64;5,307.44,491.89,49.77,8.64" target="#b32">(Szegedy et al., 2015;</ref><ref type="bibr" coords="5,360.66,491.89,21.87,8.64">2016)</ref>.</s><s coords="5,392.83,491.89,150.26,8.64;5,307.44,503.84,192.96,8.64">We tried various types of CAVs, including color, texture, objects, gender and race.</s><s coords="5,503.84,503.84,37.60,8.64;5,307.44,515.80,234.00,8.64;5,307.44,527.75,234.83,8.64;5,307.44,539.71,234.17,8.64;5,307.44,551.66,86.11,8.64">Note that none of these concepts were in the set of the network's class labels; instead all were collected from <ref type="bibr" coords="5,469.58,527.75,72.69,8.64" target="#b2">(Bau et al., 2017;</ref><ref type="bibr" coords="5,307.44,539.71,76.98,8.64" target="#b11">Huang et al., 2007;</ref><ref type="bibr" coords="5,386.92,539.71,103.50,8.64" target="#b25">Russakovsky et al., 2015)</ref> or a popular image search engine.</s><s coords="5,397.72,551.66,143.72,8.64;5,307.44,563.62,234.00,8.64;5,307.08,575.57,55.05,8.64">We show TCAV results with CAVs learned from all (for GoogleNet) or a subset (for Inception V3) of layers.</s></p><p><s coords="5,307.08,589.02,236.01,8.64;5,307.44,600.98,234.17,8.64;5,307.44,612.93,234.00,8.64;5,307.44,624.89,114.17,8.64">As shown in Figure <ref type="figure" coords="5,386.55,589.02,3.68,8.64" target="#fig_3">4</ref>, some results confirmed our commonsense intuition, such as the importance of the red concept for fire engines, the striped concept for zebras, and the Siberian husky concept for dogsleds.</s><s coords="5,425.70,624.89,115.73,8.64;5,307.44,636.84,234.17,8.64;5,307.44,648.80,234.00,8.64;5,307.44,660.75,43.58,8.64">Some results also confirmed our suspicion that these networks were sensitive to gender and race, despite not being explicitly trained with these categories.</s><s coords="5,354.11,660.75,188.98,8.64;5,307.44,672.71,235.25,8.64;5,307.44,684.66,234.00,8.64;5,307.44,696.62,69.83,8.64">For instance, TCAV provides quantitative confirmations to the qualitative findings from <ref type="bibr" coords="5,478.76,672.71,63.93,8.64;5,307.44,684.66,22.99,8.64" target="#b29">(Stock &amp; Cisse, 2017)</ref> that found ping-pong balls are highly correlated with a particular race.</s><s coords="5,383.26,696.62,158.18,8.64;5,307.44,708.58,141.37,8.64">TCAV also finds the 'female' concept highly relevant to the 'apron' class.</s><s coords="5,451.89,708.58,91.20,8.64;6,54.97,559.14,234.46,8.64;6,55.11,571.09,235.98,8.64;6,55.44,583.05,20.35,8.64">Note that the race con- We also observed that the statistical significance testing (Section 3.5) of CAVs successfully filters out spurious results.</s><s coords="6,78.68,583.05,210.76,8.64;6,55.08,595.00,235.60,8.64;6,55.44,606.96,107.79,8.64">For instance, it successfully filtered out spurious CAVs where the 'dotted' concept returned high TCAVQ (e.g., mixed4a) for zebra classes.</s><s coords="6,166.32,606.96,124.77,8.64;6,55.44,618.91,234.00,8.64;6,55.44,630.87,235.65,8.64;6,55.44,642.82,122.03,8.64">The statistical significance testing of CAVs successfully eliminated CAVs in this layer; all CAVs that passed this testing consistently returned 'striped' as the most important concept.</s></p><p><s coords="6,55.44,660.75,235.66,8.64;6,55.44,672.71,79.97,8.64">In some cases, it was sufficient to use a small number of pictures to learn CAVs.</s><s coords="6,138.52,672.71,150.92,8.64;6,55.44,684.66,234.00,8.64;6,55.44,696.62,29.63,8.64">For the 'dumbbell' class, we collected 30 pictures of each concept from a popular image search engine.</s><s coords="6,90.05,696.62,199.39,8.64;6,55.44,708.58,235.66,8.64;6,307.44,70.54,234.00,8.64;6,307.44,82.49,62.57,8.64">Despite the small number of examples, Figure <ref type="figure" coords="6,284.36,696.62,5.08,8.64" target="#fig_3">4</ref> shows that TCAV successfully identified that the 'arms' con-cept was more important to predict dumbbell class than other concepts.</s><s coords="6,376.39,82.49,165.05,8.64;6,307.44,94.45,234.00,8.64;6,307.44,106.40,234.00,8.64;6,307.44,118.36,59.27,8.64">This finding is consistent with previous qualitative findings from <ref type="bibr" coords="6,408.05,94.45,102.27,8.64" target="#b21">(Mordvintsev et al., 2015)</ref>, where a neuron's DeepDream picture of a dumbbell showed an arm holding it.</s><s coords="6,369.80,118.36,171.64,8.64;6,307.44,130.31,146.86,8.64">TCAV allows for quantitative confirmation of this previously qualitative finding.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.2." coords="6,307.69,154.01,218.10,8.64">TCAV FOR WHERE CONCEPTS ARE LEARNED</head><p><s coords="6,307.44,172.66,234.17,8.64;6,307.44,184.61,102.47,8.64">In the process of learning CAVs, we train a linear classifier to separate each concept.</s><s coords="6,414.05,184.61,127.39,8.64;6,307.44,196.57,234.00,8.64;6,307.44,208.52,158.51,8.64">We can use the performance of these linear classifiers to obtain lower-bound approximates for which layer each concept is learned.</s></p><p><s coords="6,306.94,331.76,32.38,7.77">Figure <ref type="figure" coords="6,332.59,331.76,3.36,7.77">5</ref>.</s><s coords="6,341.56,331.76,137.41,7.77">The accuracies of CAVs at each layer.</s><s coords="6,481.74,331.76,59.70,7.77;6,307.14,342.72,234.30,7.77;6,307.44,353.68,122.37,7.77">Simple concepts (e.g., colors) achieve higher performance in lower-layers than more abstract or complex concepts (e.g.</s><s coords="6,432.59,353.68,56.77,7.77">people, objects)</s></p><p><s coords="6,307.44,384.48,234.00,8.64;6,307.11,396.43,236.07,8.64">Figure <ref type="figure" coords="6,335.81,384.48,4.96,8.64">5</ref> shows that the accuracy of more abstract concepts (e.g., objects) increases in higher layers of the network.</s><s coords="6,307.13,408.39,234.31,8.64;6,307.44,420.34,125.71,8.64">The accuracy of simpler concepts, such as color, is high throughout the entire network.</s><s coords="6,438.59,420.34,102.85,8.64;6,307.44,432.30,234.17,8.64;6,307.44,444.25,235.24,8.64;6,307.08,456.21,234.36,8.64;6,307.44,468.16,213.33,8.64">This is a confirmation of many prior findings <ref type="bibr" coords="6,394.30,432.30,96.48,8.64" target="#b36">(Zeiler &amp; Fergus, 2014</ref>) that lower layers operate as lower level feature detectors (e.g., edges), while higher layers use these combinations of lower-level features to infer higher-level features (e.g., classes).</s><s coords="6,525.64,468.16,15.80,8.64;6,307.44,480.12,234.00,8.64;6,307.44,492.07,72.50,8.64">The accuracies are measured by a held out test set of 1/3 the size of the training set.</s><s coords="6,307.13,648.80,234.31,8.64;6,307.44,660.75,234.35,8.64;6,307.44,672.71,234.00,8.64;6,307.44,684.66,95.68,8.64">The goal of this experiment is demonstrate that TCAV can be successfully used to interpret the function learned by a neural network in a carefully controlled setting where ground truth is known.</s><s coords="6,409.72,684.66,131.72,8.64;6,307.13,696.62,234.66,8.64;6,307.44,708.58,23.52,8.64">We show quantitative results of TCAV and compare these with our evaluation of saliency maps.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3." coords="6,307.44,516.82,199.99,8.96">A controlled experiment with ground truth</head><p><s coords="7,55.13,70.54,234.31,8.64;7,55.11,82.49,234.33,8.64;7,55.08,94.45,212.14,8.64">To this end we create a dataset of three arbitrary classes (zebra, cab, and cucumber) with potentially noisy captions written in the image (example shown in Figure <ref type="figure" coords="7,256.22,94.45,3.67,8.64" target="#fig_4">6</ref>).</s><s coords="7,273.64,94.45,15.80,8.64;7,55.44,106.08,234.00,8.96;7,55.44,118.36,190.44,8.64">The noise parameter p ∈ [0, 1.0] controls the probability that the image caption agrees with the image class.</s><s coords="7,249.95,118.36,39.49,8.64;7,55.44,129.99,234.00,8.96;7,55.44,142.27,235.77,8.64;7,55.44,154.22,56.95,8.64">If there is no noise (p = 0), the caption always agrees with the image label, e.g. a picture of a cab always contains the word "cab" at the bottom.</s><s coords="7,116.78,153.91,43.28,8.96">At p = .3,</s><s coords="7,163.09,154.22,126.35,8.64;7,55.44,166.18,234.00,8.64;7,55.11,178.13,17.70,8.64">each picture has a 30% chance of having the correct caption replaced with a random word (e.g.</s><s coords="7,75.90,178.13,37.90,8.64">"rabbit").</s></p><p><s coords="7,54.97,196.07,236.12,8.64;7,55.44,207.70,122.04,8.96">We then train 4 networks, each on a dataset with a different noise parameter p in [0, 1].</s><s coords="7,180.57,208.02,108.87,8.64;7,55.44,219.98,234.00,8.64;7,55.44,231.93,72.71,8.64">Each network may learn to pay attention to either images or captions (or both) in the classification task.</s><s coords="7,131.26,231.93,158.18,8.64;7,55.44,243.89,234.00,8.64;7,55.44,255.84,224.17,8.64">To obtain an approximated ground truth for which concept each network paid attention, we can test the network's performance on images without captions.</s><s coords="7,282.70,255.84,6.74,8.64;7,55.44,267.80,234.00,8.64;7,55.44,279.75,130.14,8.64">If the network used the image concept for classification, the performance should remain high.</s><s coords="7,188.69,279.75,102.41,8.64;7,55.44,291.71,69.68,8.64">If not, the network performance will suffer.</s><s coords="7,128.15,291.71,161.29,8.64;7,55.44,303.66,234.00,8.64;7,55.44,315.62,126.76,8.64">We create image CAVs using each class's images, and caption CAVs using captions with other pixels in the image randomly shuffled.</s><s coords="7,55.44,498.86,234.00,8.64;7,55.44,510.81,208.47,8.64">Overall, we find that the TCAV score closely mirrors the concept that the network paid attention to (Figure <ref type="figure" coords="7,253.23,510.81,3.56,8.64" target="#fig_5">7</ref>).</s><s coords="7,267.00,510.81,24.10,8.64;7,55.44,522.77,234.25,8.64;7,55.44,534.72,235.66,8.64;7,55.44,546.68,124.45,8.64">Accuracy results suggest that, when classifying cabs, the network used the image concept more than the caption concept, regardless of the noise parameter.</s><s coords="7,183.00,546.68,106.44,8.64;7,55.44,558.63,234.00,8.64;7,55.44,570.59,198.53,8.64">However, when classifying cucumbers, the network sometimes paid attention to the caption concept and sometimes the image concept.</s><s coords="7,257.07,570.59,32.86,8.64;7,55.44,582.54,222.81,8.64">Figure <ref type="figure" coords="7,285.05,570.59,4.88,8.64" target="#fig_5">7</ref> shows that the TCAVQ closely matches this ground truth.</s><s coords="7,281.31,582.54,8.13,8.64;7,55.44,594.50,235.65,8.64;7,55.44,606.45,235.75,8.64">In the cab class, the TCAVQ for the image concept is high, consistent with its high test performance on caption-less images.</s></p><p><s coords="7,55.44,618.41,234.00,8.64;7,55.44,630.36,235.65,8.64;7,55.19,642.32,213.18,8.64">In the cucumber class, the TCAVQ for the image concept increases as noise level increases, consistent with the observation that accuracy also increases as noise increases.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.2." coords="7,55.69,666.01,229.02,8.64">EVALUATION OF SALIENCY MAPS WITH HUMAN</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="7,83.59,679.26,41.53,6.91">SUBJECTS</head><p><s coords="7,55.44,696.62,234.00,8.64;7,55.44,708.58,235.65,8.64;7,307.44,308.08,235.75,8.64">Saliency maps are an alternative way to communicate the same information, and are commonly used as an inter- pretability method for image-based networks (see Section 2).</s><s coords="7,307.44,320.03,234.00,8.64;7,307.44,331.99,234.00,8.64;7,307.44,343.94,122.35,8.64">Qualitatively, as shown in Figure <ref type="figure" coords="7,445.77,320.03,5.08,8.64" target="#fig_6">8</ref> for the cab class, it is not clear that the four networks used the image concept more than the caption concept.</s><s coords="7,432.89,343.94,110.21,8.64;7,307.44,355.90,234.00,8.64;7,307.44,367.85,231.45,8.64">In this section, we quantitatively evaluate what information saliency maps are able to communicate to humans, via a human subject experiment.</s></p><p><s coords="7,306.97,385.79,236.12,8.64;7,307.44,397.74,234.00,8.64;7,307.44,409.70,71.87,8.64">We took the saliency maps generated from the previous section to conduct a 50-person human experiment on Amazon Mechanical Turk.</s><s coords="7,382.81,409.70,158.63,8.64;7,307.44,421.65,234.00,8.64;7,307.44,433.61,234.25,8.64;7,307.44,445.56,53.40,8.64">For simplicity, we evaluated two of the four noise levels (0% and 100% noise), and two types of saliency maps ( <ref type="bibr" coords="7,373.08,433.61,109.62,8.64" target="#b30">(Sundararajan et al., 2017)</ref> and <ref type="bibr" coords="7,504.10,433.61,37.59,8.64;7,307.44,445.56,45.10,8.64" target="#b28">(Smilkov et al., 2017)</ref>).</s></p><p><s coords="7,307.44,463.18,234.00,8.96;7,307.44,475.45,170.99,8.64">Each worker did a series of six tasks (3 object classes × 2 saliency map types), all for a single model.</s><s coords="7,481.52,475.45,59.91,8.64;7,307.44,487.40,49.62,8.64">Task order was randomized.</s><s coords="7,360.18,487.40,181.26,8.64;7,307.44,499.36,190.30,8.64">In each task, the worker first saw four images along with their corresponding saliency masks.</s><s coords="7,500.86,499.36,40.58,8.64;7,307.44,511.31,234.00,8.64;7,307.44,523.27,234.00,8.64;7,307.44,535.23,234.00,8.64;7,307.44,547.18,130.01,8.64">They then rated how important they thought the image was to the model (10-point scale), how important the caption was to the model (10-point scale), and how confident they were in their answers (5-point scale).</s><s coords="7,441.89,547.18,99.55,8.64;7,307.44,559.14,172.51,8.64">In total, turkers rated 60 unique images (120 unique saliency maps).</s></p><p><s coords="7,307.44,577.07,235.66,8.64;7,307.44,589.02,234.00,8.64;7,307.44,600.98,129.64,8.64">Overall, saliency maps correctly communicated which concept was more important only 52% of the time (random chance is 50% for two options).</s><s coords="7,440.61,600.98,100.83,8.64;7,307.44,612.93,234.00,8.64;7,307.44,624.89,234.00,8.64;7,307.44,636.84,234.00,8.64;7,307.44,648.80,102.06,8.64">Wilcox signed-rank tests show that in more than half of the conditions, there was either no significant difference in the perceived importance of the two concepts, or the wrong concept was identified as being more important.</s><s coords="7,413.19,648.80,129.90,8.64;7,307.44,660.75,234.00,8.64;7,307.44,672.71,47.74,8.64">Figure <ref type="figure" coords="7,442.42,648.80,5.08,8.64">9</ref> (top) shows one example where saliency maps communicated the wrong concept importance.</s><s coords="7,358.26,672.71,183.17,8.64;7,307.44,684.66,235.65,8.64;7,307.44,696.62,234.00,8.64;7,307.44,708.58,174.91,8.64">In spite of this, the percent of correct answers rated as very confident was similar to that of incorrect answers (Figure <ref type="figure" coords="7,364.41,696.62,4.98,8.64">9</ref> bottom), suggesting that interpreting using saliency maps alone could be misleading.</s><s coords="7,489.35,708.58,53.34,8.64;8,54.94,205.19,32.38,7.77">Furthermore, Figure <ref type="figure" coords="8,80.59,205.19,3.36,7.77">9</ref>.</s><s coords="8,89.56,205.19,199.88,7.77;8,55.44,216.15,197.39,7.77">For the cab class, the ground truth was that the image concept was more important than the caption concept.</s><s coords="8,255.69,216.15,34.86,7.77;8,55.12,227.10,234.32,7.77;8,55.44,238.06,234.00,7.77;8,55.44,249.02,165.79,7.77">However, when looking at saliency maps, humans perceived the caption concept as being more important (model with 0% noise), or did not discern a difference (model with 100% noise).</s><s coords="8,224.01,249.02,65.76,7.77;8,55.44,259.98,235.57,7.77">In contrast, TCAV results correctly show that the image concept was more important.</s></p><p><s coords="8,55.44,270.94,234.00,7.77;8,55.44,281.90,234.00,7.77;8,55.44,292.86,69.98,7.77">Overall, the percent of correct answers rated as very confident was similar to that of incorrect answers, indicating that saliency maps may be misleading.</s></p><p><s coords="8,55.08,328.55,236.02,8.64;8,55.44,340.51,234.00,8.64;8,55.44,352.46,234.34,8.64">when one of the saliency map methods correctly communicated the more important concept, it was always the case that the other saliency map method did not, and vice versa.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4." coords="8,55.44,377.21,152.45,8.96">TCAV for a medical application</head><p><s coords="8,54.97,391.76,234.47,8.64;8,55.44,403.72,234.00,8.64;8,55.44,415.67,235.75,8.64">We now apply TCAV to the real-world problem of predicting diabetic retinopathy (DR), a treatable but sight-threatening condition, from retinal fundus images <ref type="bibr" coords="8,207.47,415.67,79.45,8.64" target="#b17">(Krause et al., 2017)</ref>.</s><s coords="8,54.97,427.63,213.49,8.64">We consulted with a medical expert about our results.</s></p><p><s coords="8,55.13,445.56,234.31,8.64;8,55.44,457.52,234.00,8.64;8,55.44,469.47,98.98,8.64">The model of interest predicts DR level using a 5-point grading scale based on complex criteria, from level 0 (no DR) to 4 (proliferative).</s><s coords="8,159.40,469.47,130.04,8.64;8,55.44,481.43,234.00,8.64;8,55.44,493.38,234.00,8.64;8,55.44,505.34,234.00,8.64;8,55.44,517.29,25.83,8.64">Doctors' diagnoses of DR level depend on evaluating a set of diagnostic concepts, such as microaneurysms (MA) or pan-retinal laser scars (PRP), with different concepts being more prominent at different DR levels.</s><s coords="8,84.34,517.29,205.10,8.64;8,55.44,529.25,103.36,8.64">We sought to test the importance of these concepts to the model using TCAV.</s></p><p><s coords="8,55.44,547.18,234.00,8.64;8,55.44,559.14,115.68,8.64">For some DR levels, TCAV identified the correct diagnostic concepts as being important.</s><s coords="8,174.21,559.14,116.47,8.64;8,55.44,571.09,234.00,8.64;8,55.09,583.05,160.23,8.64">As shown in Figure <ref type="figure" coords="8,255.88,559.14,10.12,8.64" target="#fig_7">10</ref> (top), the TCAV score was high for concepts relevant to DR level 4, and low for a non-diagnostic concept.</s></p><p><s coords="8,55.44,600.98,235.66,8.64;8,55.44,612.93,136.66,8.64">For DR level 1, TCAV results sometimes diverge from doctors' heuristics ( Figure 10 bottom).</s><s coords="8,194.99,612.93,94.45,8.64;8,55.11,624.89,234.68,8.64;8,55.44,636.84,234.00,8.64;8,55.44,648.80,43.20,8.64">For example, aneurysms (HMA) had a relatively high TCAV score, even though they are diagnostic of a higher DR level (see HMA distribution in Figure <ref type="figure" coords="8,83.19,648.80,7.73,8.64" target="#fig_7">10</ref>).</s><s coords="8,101.66,648.80,187.78,8.64;8,55.44,660.75,235.74,8.64">However, consistent with this finding, the model often over-predicted level 1 (mild) as level 2 (moderate).</s><s coords="8,55.44,672.71,233.99,8.64;8,55.44,684.66,204.80,8.64">Given this, the doctor said she would like to tell the model to de-emphasize the importance of HMA for level 1.</s><s coords="8,263.31,684.66,27.38,8.64;8,55.13,696.62,234.56,8.64;8,55.44,708.58,226.74,8.64">Hence, TCAV may be useful for helping experts interpret and fix model errors when they disagree with model predictions.</s><s coords="8,307.16,313.17,234.28,7.77;8,307.44,324.13,234.00,7.77;8,307.44,335.09,234.00,7.77;8,307.44,346.05,167.83,7.77">The model often incorrectly predicts level 1 as level 2, a model error that could be made more interpretable using TCAV: TCAVQs on concepts typically related to level 1 (green, MA) are high in addition to level 2-related concepts (red, HMA).</s><s coords="8,477.19,346.05,64.58,7.77;8,307.44,357.00,224.89,7.77">Bottom: the HMA feature appears more frequently in DR level 2 than DR level 1.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5." coords="8,307.44,412.47,161.30,10.75">Conclusion and Future Work</head><p><s coords="8,307.13,433.61,234.31,8.64;8,307.44,445.56,234.00,8.64;8,307.44,457.52,234.00,8.64;8,307.44,469.47,234.00,8.64;8,307.44,481.43,36.60,8.64">The method presented here, TCAV, is a step toward creating a human-friendly linear interpretation of the internal state of a deep learning model, so that questions about model decisions may be answered in terms of natural high-level concepts.</s><s coords="8,347.06,481.43,194.38,8.64;8,307.44,493.38,234.00,8.64;8,307.44,505.34,137.36,8.64">Crucially, these concepts do not need to be known at training time, and may easily be specified during a post hoc analysis via a set of examples.</s></p><p><s coords="8,307.44,523.27,234.00,8.64;8,307.44,535.23,79.89,8.64">Our experiments suggest TCAV can be a useful technique in an analyst's toolbox.</s><s coords="8,390.30,535.23,152.80,8.64;8,307.44,547.18,167.80,8.64">We provided evidence that CAVs do indeed correspond to their intended concepts.</s><s coords="8,478.19,547.18,63.25,8.64;8,307.44,559.14,234.00,8.64;8,307.44,571.09,234.00,8.64;8,307.44,583.05,235.67,8.64">We then showed how they may be used to give insight into the predictions made by various classification models, from standard image classification networks to a specialized medical application.</s></p><p><s coords="8,307.13,600.98,234.31,8.64;8,307.44,612.93,140.19,8.64">There are several promising avenues for future work based on the concept attribution approach.</s><s coords="8,450.68,612.93,90.76,8.64;8,307.44,624.89,234.17,8.64;8,307.44,636.84,234.36,8.64;8,307.44,648.80,33.03,8.64">While we have focused on image classification systems, applying TCAV to other types of data (audio, video, sequences, etc.) may yield new insights.</s><s coords="8,343.59,648.80,199.51,8.64;8,307.44,660.75,234.00,8.64;8,307.44,672.71,124.78,8.64">TCAV may also have applications other than interpretability: for example, in identifying adversarial examples for neural nets (see appendix).</s><s coords="8,436.55,672.71,105.06,8.64;8,307.08,684.66,234.61,8.64;8,307.44,696.62,234.00,8.64;8,307.44,708.58,182.37,8.64">Finally, one could ask for ways to identify concepts automatically and for a network that shows super-human performance, concept attribution may help humans improve their own abilities.</s></p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="2,54.94,230.27,486.50,8.12;2,55.44,241.31,486.00,8.04;2,55.44,252.54,486.31,7.77;2,55.44,263.23,421.46,8.04;2,477.22,261.44,2.40,5.24;2,476.90,263.50,64.69,8.79;2,55.44,274.17,409.48,8.35;2,78.50,67.06,437.38,152.97"><head>Figure 1 .</head><label>1</label><figDesc><div><p><s coords="2,54.94,230.62,32.38,7.77">Figure 1.</s><s coords="2,89.56,230.27,451.88,8.12;2,55.44,241.31,486.00,8.04;2,55.44,252.54,137.53,7.77">Testing with Concept Activation Vectors: Given a user-defined set of examples for a concept (e.g., 'striped'), and random examples a , labeled training-data examples for the studied class (zebras) b , and a trained network c , TCAV can quantify the model's sensitivity to the concept for that class.</s><s coords="2,195.79,252.54,345.96,7.77;2,55.44,263.23,183.26,8.04">CAVs are learned by training a linear classifier to distinguish between the activations produced by a concept's examples and examples in any layer d .</s><s coords="2,241.48,263.50,235.42,7.77;2,477.22,261.44,2.40,5.24;2,476.90,263.50,49.76,8.79">The CAV is the vector orthogonal to the classification boundary (v l C , red arrow).</s><s coords="2,529.43,263.50,12.16,7.77;2,55.44,274.17,409.48,8.35">For the class of interest (zebras), TCAV uses the directional derivative S C,k,l (x) to quantify conceptual sensitivity e .</s></p></div></figDesc><graphic coords="2,78.50,67.06,437.38,152.97" type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1" coords="5,54.94,515.27,235.99,7.77;5,55.44,526.23,230.99,7.77;5,55.44,428.72,234.00,81.93"><head>Figure 2 .</head><label>2</label><figDesc><div><p><s coords="5,54.94,515.27,235.99,7.77;5,55.44,526.23,230.99,7.77">Figure 2. The most and least similar pictures of stripes using 'CEO' concept (left) and neckties using 'model women' concept (right)</s></p></div></figDesc><graphic coords="5,55.44,428.72,234.00,81.93" type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2" coords="5,306.94,345.51,234.50,7.77;5,307.44,356.47,162.00,7.77;5,307.44,259.35,233.99,77.06"><head>Figure 3 .</head><label>3</label><figDesc><div><p><s coords="5,306.94,345.51,234.50,7.77;5,307.44,356.47,162.00,7.77">Figure 3. Empirical Deepdream using knitted texture, corgis and Siberian huskey concept vectors (zoomed-in)</s></p></div></figDesc><graphic coords="5,307.44,259.35,233.99,77.06" type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3" coords="6,54.94,392.28,234.82,7.77;6,55.44,403.24,235.12,7.77;6,55.44,414.20,235.12,7.77;6,55.44,425.16,235.48,7.77;6,55.44,436.12,234.60,7.77;6,55.14,447.08,234.29,7.77;6,55.44,458.04,234.00,7.77;6,55.44,469.00,231.27,7.77;6,68.23,67.06,205.92,314.62"><head>Figure 4 .</head><label>4</label><figDesc><div><p><s coords="6,54.94,392.28,234.82,7.77;6,55.44,403.24,235.12,7.77;6,55.44,414.20,235.12,7.77;6,55.44,425.16,235.48,7.77;6,55.44,436.12,234.60,7.77;6,55.14,447.08,119.98,7.77">Figure 4. Relative TCAV for all layers in GoogleNet<ref type="bibr" coords="6,255.85,392.28,33.90,7.77;6,55.44,403.24,42.91,7.77" target="#b32">(Szegedy et al., 2015)</ref> and last three layers in Inception V3<ref type="bibr" coords="6,235.32,403.24,55.24,7.77;6,55.44,414.20,20.83,7.77" target="#b33">(Szegedy et al., 2016)</ref> for confirmation (e.g., fire engine), discovering biases (e.g., rugby, apron), and quantitative confirmation for previously qualitative findings in<ref type="bibr" coords="6,114.51,436.12,95.02,7.77" target="#b21">(Mordvintsev et al., 2015;</ref><ref type="bibr" coords="6,211.81,436.12,73.96,7.77" target="#b29">Stock &amp; Cisse, 2017</ref>) (e.g., dumbbell, ping-pong ball).</s><s coords="6,178.96,447.08,110.48,7.77;6,55.44,458.04,234.00,7.77;6,55.44,469.00,62.27,7.77">TCAVQs in layers close to the logit layer (red) represent more direct influence on the prediction than lower layers.</s><s coords="6,120.44,469.00,166.28,7.77">'*'s mark CAVs omitted after statistical testing.</s></p></div></figDesc><graphic coords="6,68.23,67.06,205.92,314.62" type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4" coords="6,306.94,612.89,234.50,7.77;6,307.12,623.85,163.35,7.77;6,307.44,531.20,242.99,72.58"><head>Figure 6 .</head><label>6</label><figDesc><div><p><s coords="6,306.94,612.89,32.38,7.77">Figure 6.</s><s coords="6,341.56,612.89,199.88,7.77;6,307.12,623.85,163.35,7.77">A controlled training set: Regular images and images with captions for the cab and cucumber class.</s></p></div></figDesc><graphic coords="6,307.44,531.20,242.99,72.58" type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5" coords="7,54.94,453.85,234.50,7.77;7,55.44,464.81,235.57,7.77;7,55.44,475.77,234.00,7.77;7,55.44,486.73,148.23,7.77;7,172.44,361.39,114.66,77.37"><head>Figure 7 .</head><label>7</label><figDesc><div><p><s coords="7,54.94,453.85,234.50,7.77;7,55.44,464.81,235.57,7.77">Figure 7. TCAV results with approximated ground truth: Both cab and cucumber classes, TCAVQ closely matches the ground truth.</s><s coords="7,55.44,475.77,234.00,7.77;7,55.44,486.73,148.23,7.77">For the cab class, the network used image concept more than the caption concept regardless of the models.</s></p></div></figDesc><graphic coords="7,172.44,361.39,114.66,77.37" type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6" coords="7,306.94,213.10,235.75,7.77;7,307.44,223.77,234.60,8.06;7,307.44,235.01,234.00,7.77;7,307.44,245.97,234.00,7.77;7,307.44,256.93,234.00,7.77;7,307.44,267.89,91.99,7.77;7,317.90,67.06,210.59,139.92"><head>Figure 8 .</head><label>8</label><figDesc><div><p><s coords="7,306.94,213.10,32.38,7.77">Figure8.</s><s coords="7,341.56,213.10,201.13,7.77;7,307.44,223.77,234.60,8.06;7,307.44,235.01,217.32,7.77">Saliency map results with approximated ground truth: Models trained on datasets with different noise parameter p (rows) and different saliency map methods (columns) are presented.</s><s coords="7,527.57,235.01,13.87,7.77;7,307.44,245.97,234.00,7.77;7,307.44,256.93,234.00,7.77;7,307.44,267.89,91.99,7.77">The approximated ground truth is that the network is paying a lot more attention to the image than the caption in all cases, which is not clear from saliency maps.</s></p></div></figDesc><graphic coords="7,317.90,67.06,210.59,139.92" type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7" coords="8,306.94,280.29,234.50,7.77;8,307.44,291.25,234.00,7.77;8,307.44,302.21,235.57,7.77;8,307.16,313.17,234.28,7.77;8,307.44,324.13,234.00,7.77;8,307.44,335.09,234.00,7.77;8,307.44,346.05,234.32,7.77;8,307.44,357.00,224.89,7.77;8,329.60,67.06,187.20,208.46"><head>Figure 10 .</head><label>10</label><figDesc><div><p><s coords="8,306.94,280.29,36.86,7.77">Figure10.</s><s coords="8,346.04,280.29,156.58,7.77">Top: A DR level 4 image and TCAV results.</s><s coords="8,505.40,280.29,36.04,7.77;8,307.44,291.25,234.00,7.77;8,307.44,302.21,85.63,7.77">TCAVQ is high for features relevant for this level (green), and low for an irrelevant concept (red).</s><s coords="8,395.86,302.21,147.15,7.77">Middle: DR level 1 (mild) TCAV results.</s><s coords="8,307.16,313.17,234.28,7.77;8,307.44,324.13,234.00,7.77;8,307.44,335.09,234.00,7.77;8,307.44,346.05,167.83,7.77">The model often incorrectly predicts level 1 as level 2, a model error that could be made more interpretable using TCAV: TCAVQs on concepts typically related to level 1 (green, MA) are high in addition to level 2-related concepts (red, HMA).</s><s coords="8,477.19,346.05,64.58,7.77;8,307.44,357.00,224.89,7.77">Bottom: the HMA feature appears more frequently in DR level 2 than DR level 1.</s></p></div></figDesc><graphic coords="8,329.60,67.06,187.20,208.46" type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8" coords="11,228.28,682.70,140.33,7.77;11,78.50,370.50,437.39,297.11"><head>Figure 12 .Figure 13 .Figure 14 .Figure 15 .</head><label>12131415</label><figDesc><div><p><s coords="11,228.28,682.70,36.86,7.77">Figure 12.</s><s coords="11,268.23,682.70,100.38,7.77">TCAV results for each layer</s></p></div></figDesc><graphic coords="11,78.50,370.50,437.39,297.11" type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" coords="12,78.50,164.54,437.41,430.18"><head/><label/><figDesc><div><p/></div></figDesc><graphic coords="12,78.50,164.54,437.41,430.18" type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" coords="4,307.13,70.54,234.31,80.37"><head/><label/><figDesc><div><p><s coords="4,307.13,70.54,234.31,8.64;4,307.44,82.49,234.00,8.64;4,307.44,94.45,66.72,8.64">To guard against spurious results from testing a class against a particular CAV, we propose the following simple statistical significance test.</s><s coords="4,377.25,94.45,164.19,8.64;4,307.44,106.08,234.00,8.96;4,307.44,118.36,111.82,8.64">Instead of training a CAV once, against a single batch of random examples N , we perform multiple training runs, typically 500.</s><s coords="4,422.34,118.36,119.10,8.64;4,307.44,130.31,234.00,8.64;4,307.44,142.27,19.65,8.64">A meaningful concept should lead to TCAV scores that behave consistently across training runs.</s></p></div></figDesc><table/></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_0" coords="3,323.58,693.33,218.98,8.06;3,307.44,703.29,231.06,8.06"><p><s coords="3,323.58,693.33,218.98,8.06;3,307.44,703.29,231.06,8.06">For convnets, a layer must be flattened so width w, height h, and c channels becomes a vector of m = w × h × c activations.</s></p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head coords="9,55.69,70.54,91.82,8.64">ACKNOWLEDGMENTS</head><p>We would like to thank <rs type="person">Daniel Smilkov</rs> for helpful discussions.We thank <rs type="person">Alexander Mordvintsev</rs> for providing tfzoo code.We also thank <rs type="person">Ethan R Elenberg</rs>, <rs type="person">David Alvarez Melis</rs> and an anonymous reviewer for helpful comments and discussions.We thank <rs type="person">Alexander Mordvintsev</rs>, <rs type="person">Chris Olah</rs> and <rs type="person">Ludwig Schubert</rs> for generously allowing us to use their code for DeepDream.Thanks to Christopher for sharing early work on doing attribution to semantically meaningful channels.Work from <rs type="person">Nicholas Carlini</rs>, on training linear classifiers for non-label concepts on logit-layer activations, was one of our motivations.Finally, we would like to thank <rs type="person">Dr. Zahra Rastegar</rs> for evaluating diabetic retinopathy results, and provided relevant medical expertise.</p></div>
+			</div>			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="10,55.44,68.77,49.53,10.75">Appendix</head><p><s coords="10,55.44,89.91,234.00,8.64;10,55.44,101.87,134.21,8.64">In this appendix, we show other experiments we conducted and additional results and figures.</s><s coords="10,55.08,393.64,234.36,8.64;10,55.19,405.59,234.25,8.64;10,55.44,417.55,215.01,8.64">Adversarial examples <ref type="bibr" coords="10,141.88,393.64,84.94,8.64" target="#b31">(Szegedy et al., 2013)</ref> are small, often visually imperceptible changes to an image which can cause an arbitrarily change to a network's predicted class.</s><s coords="10,276.14,417.55,13.30,8.64;10,55.44,429.50,234.00,8.64;10,55.44,441.46,96.47,8.64">We conduct a simple experiment to see whether TCAV is fooled by adversarial examples.</s><s coords="10,154.98,441.46,134.46,8.64;10,55.44,453.41,190.87,8.64">In Figure <ref type="figure" coords="10,193.46,441.46,8.14,8.64">11</ref>, TCAV returns a high score for the striped concept for zebra pictures.</s><s coords="10,249.40,453.41,40.04,8.64;10,55.44,465.37,235.65,8.64;10,55.44,477.32,234.00,8.64;10,55.44,489.28,124.92,8.64">We create two sets of adversarial examples, both by performing a targeted attack using a single step of the Fast Gradient Sign Method <ref type="bibr" coords="10,89.75,489.28,86.24,8.64" target="#b18">(Kurakin et al., 2017)</ref>.</s><s coords="10,184.06,489.28,105.38,8.64;10,55.44,501.23,234.00,8.64;10,55.44,513.19,234.00,8.64;10,55.44,525.15,234.66,8.64;10,55.44,537.10,210.58,8.64">We successfully make the network believe that an essentially random noise image (top middle in Figure <ref type="figure" coords="10,127.54,513.19,9.03,8.64">11</ref>) and a randomly sampled non-zebra image with imperceptible changes (top right in Figure <ref type="figure" coords="10,276.58,525.15,9.01,8.64">11</ref>) are zebras (100% for noise image, 99% for the latter).</s><s coords="10,269.11,537.10,21.99,8.64;10,55.44,549.06,234.00,8.64;10,55.44,561.01,235.74,8.64">However, the distribution of TCAVQs for the regular zebra and adversarial images remain different (bottom in Figure <ref type="figure" coords="10,275.14,561.01,8.02,8.64">11</ref>).</s><s coords="10,54.97,572.97,234.46,8.64;10,55.44,584.92,234.00,8.64;10,55.44,596.88,234.00,8.64;10,55.44,608.83,55.61,8.64">While this may not be sufficient direction for building a defense mechanism, one can imagine having a dictionary of concepts where we know the usual distribution of TCAVQs for each class.</s><s coords="10,114.14,608.83,175.30,8.64;10,55.44,620.79,234.00,8.64;10,55.44,632.74,127.85,8.64">If we want an 'alert' for potential adversarial attacks, we can compare the 'usual' distribution of TCAVQs to that of the suspicious images.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="10,55.44,128.67,173.15,10.75">A. TCAV on adversarial examples</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="10,55.44,659.54,216.62,10.75;10,69.00,673.49,218.80,10.75;10,69.39,687.44,47.03,10.75">B. Additional Results: Insights and biases: TCAV for widely used image classifications networks</head><p><s coords="10,54.97,708.58,173.65,8.64">We provide further results on Section 4.2.1.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="10,307.44,68.77,196.98,10.75;10,322.05,82.72,34.97,10.75;10,307.44,104.09,219.66,10.75;10,321.81,118.03,28.81,10.75">C. Additional Results: Empirical Deep Dream D. Additional Results: Sorting Images with CAVs</head></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="17,55.44,88.47,235.24,8.64;17,65.40,100.43,225.69,8.64;17,65.04,112.20,225.64,8.82;17,65.40,124.34,22.42,8.64" xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Local explanation methods for deep neural networks lack sensitivity to parameter values</title>
+		<author>
+			<persName coords=""><forename type="first">Julius</forename><surname>Adebayo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Justin</forename><surname>Gilmer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ian</forename><surname>Goodfellow</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Been</forename><surname>Kim</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note type="raw_reference">Adebayo, Julius, Gilmer, Justin, Goodfellow, Ian, and Kim, Been. Local explanation methods for deep neural net- works lack sensitivity to parameter values. arXiv preprint, 2018.</note>
+</biblStruct>
+
+<biblStruct coords="17,55.44,145.93,235.65,8.64;17,65.40,157.71,224.04,8.82;17,65.40,169.66,134.95,8.82" xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Preprint repository arXiv achieves milestone million uploads</title>
+		<author>
+			<persName coords=""><forename type="first">Guillaume</forename><surname>Alain</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yoshua</forename><surname>Bengio</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/pt.5.028530</idno>
+		<idno type="arXiv">arXiv:1610.01644</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Physics Today</title>
+		<title level="j" type="abbrev">Phys. Today</title>
+		<idno type="ISSNe">1945-0699</idno>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<publisher>AIP Publishing</publisher>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note type="raw_reference">Alain, Guillaume and Bengio, Yoshua. Understanding in- termediate layers using linear classifier probes. arXiv preprint arXiv:1610.01644, 2016.</note>
+</biblStruct>
+
+<biblStruct coords="17,55.44,191.44,234.00,8.64;17,65.09,203.39,226.00,8.64;17,65.40,215.17,224.04,8.82;17,64.80,227.12,151.68,8.82" xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Network Dissection: Quantifying Interpretability of Deep Visual Representations</title>
+		<author>
+			<persName coords=""><forename type="first">David</forename><surname>Bau</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bolei</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Aditya</forename><surname>Khosla</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Aude</forename><surname>Oliva</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Antonio</forename><surname>Torralba</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/cvpr.2017.354</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2017-07">2017</date>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Bau, David, Zhou, Bolei, Khosla, Aditya, Oliva, Aude, and Torralba, Antonio. Network dissection: Quantifying in- terpretability of deep visual representations. In Computer Vision and Pattern Recognition, 2017.</note>
+</biblStruct>
+
+<biblStruct coords="17,55.44,248.90,235.25,8.64;17,65.40,260.85,224.03,8.64;17,65.40,272.81,224.04,8.64;17,65.40,284.58,224.04,8.82;17,64.99,296.54,56.18,8.82" xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Intelligible Models for HealthCare</title>
+		<author>
+			<persName coords=""><forename type="first">Rich</forename><surname>Caruana</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yin</forename><surname>Lou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Johannes</forename><surname>Gehrke</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Paul</forename><surname>Koch</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Marc</forename><surname>Sturm</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Noemie</forename><surname>Elhadad</surname></persName>
+		</author>
+		<idno type="DOI">10.1145/2783258.2788613</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</title>
+		<meeting>the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2015-08-10">2015</date>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Caruana, Rich, Lou, Yin, Gehrke, Johannes, Koch, Paul, Sturm, Marc, and Elhadad, Noemie. Intelligible models for healthcare: Predicting pneumonia risk and hospital 30-day readmission. In Knowledge Discovery and Data Mining, 2015.</note>
+</biblStruct>
+
+<biblStruct coords="17,55.44,318.31,234.00,8.64;17,65.40,330.09,224.04,8.82;17,65.40,342.04,100.17,8.82" xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Preprint repository arXiv achieves milestone million uploads</title>
+		<author>
+			<persName coords=""><forename type="first">Piotr</forename><surname>Dabkowski</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yarin</forename><surname>Gal</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/pt.5.028530</idno>
+		<idno type="arXiv">arXiv:1705.07857</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Physics Today</title>
+		<title level="j" type="abbrev">Phys. Today</title>
+		<idno type="ISSNe">1945-0699</idno>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<publisher>AIP Publishing</publisher>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note type="raw_reference">Dabkowski, Piotr and Gal, Yarin. Real time image saliency for black box classifiers. arXiv preprint arXiv:1705.07857, 2017.</note>
+</biblStruct>
+
+<biblStruct coords="17,55.44,363.82,234.00,8.64;17,65.40,375.59,224.04,8.82;17,65.40,387.55,100.17,8.82" xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Considerations for Evaluation and Generalization in Interpretable Machine Learning</title>
+		<author>
+			<persName coords=""><forename type="first">Finale</forename><surname>Doshi-Velez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Been</forename><surname>Kim</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/978-3-319-98131-4_1</idno>
+		<idno type="arXiv">arXiv:1702.08608</idno>
+	</analytic>
+	<monogr>
+		<title level="m">The Springer Series on Challenges in Machine Learning</title>
+		<imprint>
+			<publisher>Springer International Publishing</publisher>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="3" to="17"/>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Doshi-Velez, Finale; Kim, Been. Towards a rigorous science of interpretable machine learning. In eprint arXiv:1702.08608, 2017.</note>
+</biblStruct>
+
+<biblStruct coords="17,55.44,409.32,235.75,8.64;17,65.40,421.28,225.69,8.64;17,65.40,433.05,224.03,8.82;17,65.23,445.01,139.09,8.82" xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Graph-Sparse LDA: A Topic Model with Structured Sparsity</title>
+		<author>
+			<persName coords=""><forename type="first">Finale</forename><surname>Doshi-Velez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Byron</forename><surname>Wallace</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ryan</forename><surname>Adams</surname></persName>
+		</author>
+		<idno type="DOI">10.1609/aaai.v29i1.9603</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Proceedings of the AAAI Conference on Artificial Intelligence</title>
+		<title level="j" type="abbrev">AAAI</title>
+		<idno type="ISSN">2159-5399</idno>
+		<idno type="ISSNe">2374-3468</idno>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="2575" to="2581"/>
+			<date type="published" when="2015-02-21">2015</date>
+			<publisher>Association for the Advancement of Artificial Intelligence (AAAI)</publisher>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Doshi-Velez, Finale, Wallace, Byron C, and Adams, Ryan. Graph-sparse lda: A topic model with structured spar- sity. In Association for the Advancement of Artificial Intelligence, pp. 2575-2581, 2015.</note>
+</biblStruct>
+
+<biblStruct coords="17,55.44,466.78,235.65,8.64;17,65.40,478.74,224.04,8.64;17,65.40,490.51,224.04,8.82;17,65.09,502.47,138.92,8.82" xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Generative models: data from noise</title>
+		<author>
+			<persName coords=""><forename type="first">Jesse</forename><surname>Engel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Matthew</forename><surname>Hoffman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Adam</forename><surname>Roberts</surname></persName>
+		</author>
+		<idno type="DOI">10.1142/9789811237461_0018</idno>
+		<idno>abs/1711.05772</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Deep Learning for Physics Research</title>
+		<imprint>
+			<publisher>WORLD SCIENTIFIC</publisher>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="239" to="270"/>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Engel, Jesse, Hoffman, Matthew, and Roberts, Adam. La- tent constraints: Learning to generate conditionally from unconditional generative models. Computing Research Repository, abs/1711.05772, 2017.</note>
+</biblStruct>
+
+<biblStruct coords="17,55.44,524.24,234.00,8.64;17,65.04,536.20,224.39,8.64;17,65.40,547.97,210.83,8.82" xml:id="b8">
+	<monogr>
+		<title level="m" type="main">Visualizing higher-layer features of a deep network</title>
+		<author>
+			<persName coords=""><forename type="first">Dumitru</forename><surname>Erhan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Yoshua</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Aaron</forename><surname>Courville</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pascal</forename><surname>Vincent</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="volume">1341</biblScope>
+		</imprint>
+		<respStmt>
+			<orgName>University of Montreal</orgName>
+		</respStmt>
+	</monogr>
+	<note type="raw_reference">Erhan, Dumitru, Bengio, Yoshua, Courville, Aaron, and Vincent, Pascal. Visualizing higher-layer features of a deep network. University of Montreal, 1341:3, 2009.</note>
+</biblStruct>
+
+<biblStruct coords="17,55.44,569.74,235.65,8.64;17,65.40,581.52,224.03,8.82;17,65.40,593.48,100.17,8.82" xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Preprint repository arXiv achieves milestone million uploads</title>
+		<author>
+			<persName coords=""><forename type="first">Amirata</forename><surname>Ghorbani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Abubakar</forename><surname>Abid</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">James</forename><surname>Zou</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/pt.5.028530</idno>
+		<idno type="arXiv">arXiv:1710.10547</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Physics Today</title>
+		<title level="j" type="abbrev">Phys. Today</title>
+		<idno type="ISSNe">1945-0699</idno>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<publisher>AIP Publishing</publisher>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note type="raw_reference">Ghorbani, Amirata, Abid, Abubakar, and Zou, James. In- terpretation of neural networks is fragile. arXiv preprint arXiv:1710.10547, 2017.</note>
+</biblStruct>
+
+<biblStruct coords="17,55.44,615.25,235.65,8.64;17,65.40,627.20,224.03,8.64;17,65.40,638.98,216.42,8.82" xml:id="b10">
+	<analytic>
+		<title level="a" type="main">European Union Regulations on Algorithmic Decision Making and a “Right to Explanation”</title>
+		<author>
+			<persName coords=""><forename type="first">Bryce</forename><surname>Goodman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Seth</forename><surname>Flaxman</surname></persName>
+		</author>
+		<idno type="DOI">10.1609/aimag.v38i3.2741</idno>
+		<idno type="arXiv">arXiv:1606.08813</idno>
+	</analytic>
+	<monogr>
+		<title level="j">AI Magazine</title>
+		<title level="j" type="abbrev">AI Magazine</title>
+		<idno type="ISSN">0738-4602</idno>
+		<idno type="ISSNe">2371-9621</idno>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="50" to="57"/>
+			<date type="published" when="2016">2016</date>
+			<publisher>Wiley</publisher>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note type="raw_reference">Goodman, Bryce and Flaxman, Seth. European union reg- ulations on algorithmic decision-making and a "right to explanation". arXiv preprint arXiv:1606.08813, 2016.</note>
+</biblStruct>
+
+<biblStruct coords="17,55.44,660.75,235.66,8.64;17,65.40,672.71,224.21,8.64;17,65.40,684.66,225.78,8.64;17,65.09,696.62,224.35,8.64;17,65.40,708.58,124.24,8.64" xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Labeled faces in the wild: A database for studying face recognition in unconstrained environments</title>
+		<author>
+			<persName coords=""><forename type="first">Gary</forename><forename type="middle">B</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Ramesh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Manu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tamara</forename><surname>Berg</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Erik</forename><surname>Learned-Miller</surname></persName>
+		</author>
+		<idno>07-49</idno>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+		<respStmt>
+			<orgName>University of Massachusetts, Amherst</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">Technical Report</note>
+	<note type="raw_reference">Huang, Gary B, Ramesh, Manu, Berg, Tamara, and Learned- Miller, Erik. Labeled faces in the wild: A database for studying face recognition in unconstrained environments. Technical report, Technical Report 07-49, University of Massachusetts, Amherst, 2007.</note>
+</biblStruct>
+
+<biblStruct coords="17,307.44,70.54,234.00,8.64;17,317.40,82.49,225.69,8.64;17,317.40,94.27,225.69,8.82;17,317.40,106.22,123.25,8.82" xml:id="b12">
+	<analytic>
+		<title level="a" type="main">The Bayesian Case Model: A generative approach for case-based reasoning and prototype classification</title>
+		<author>
+			<persName coords=""><forename type="first">Been</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Cynthia</forename><surname>Rudin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Julie</forename><surname>Shah</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Neural Information Processing Systems</title>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Kim, Been, Rudin, Cynthia, and Shah, Julie. The Bayesian Case Model: A generative approach for case-based rea- soning and prototype classification. In Neural Informa- tion Processing Systems, 2014.</note>
+</biblStruct>
+
+<biblStruct coords="17,307.44,125.70,234.00,8.64;17,317.40,137.66,225.69,8.64;17,317.40,149.43,224.04,8.82;17,317.15,161.39,58.94,8.82" xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Mind the gap: A generative approach to interpretable feature selection and extraction</title>
+		<author>
+			<persName coords=""><forename type="first">Been</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Julie</forename><surname>Shah</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Finale</forename><surname>Doshi-Velez</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Neural Information Processing Systems</title>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Kim, Been, Shah, Julie, and Doshi-Velez, Finale. Mind the gap: A generative approach to interpretable feature se- lection and extraction. In Neural Information Processing Systems, 2015.</note>
+</biblStruct>
+
+<biblStruct coords="17,307.44,180.86,235.25,8.64;17,317.04,192.82,225.64,8.64;17,317.40,204.77,224.38,8.64;17,317.40,216.55,199.42,8.82" xml:id="b14">
+	<analytic>
+		<title level="a" type="main">The (Un)reliability of Saliency Methods</title>
+		<author>
+			<persName coords=""><forename type="first">Pieter-Jan</forename><surname>Kindermans</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sara</forename><surname>Hooker</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Julius</forename><surname>Adebayo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Maximilian</forename><surname>Alber</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kristof</forename><forename type="middle">T</forename><surname>Schütt</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sven</forename><surname>Dähne</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dumitru</forename><surname>Erhan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Been</forename><surname>Kim</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/978-3-030-28954-6_14</idno>
+		<idno type="arXiv">arXiv:1711.00867</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Explainable AI: Interpreting, Explaining and Visualizing Deep Learning</title>
+		<imprint>
+			<publisher>Springer International Publishing</publisher>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="267" to="280"/>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note type="raw_reference">Kindermans, Pieter-Jan, Hooker, Sara, Adebayo, Julius, Alber, Maximilian, Schütt, Kristof T, Dähne, Sven, Erhan, Dumitru, and Kim, Been. The (un) reliability of saliency methods. arXiv preprint arXiv:1711.00867, 2017.</note>
+</biblStruct>
+
+<biblStruct coords="17,307.44,235.85,235.25,8.82;17,316.66,247.98,22.42,8.64" xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Do decision biases explain too much</title>
+		<author>
+			<persName coords=""><forename type="first">G</forename><forename type="middle">A</forename><surname>Klein</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">HFES</title>
+		<imprint>
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Klein, G.A. Do decision biases explain too much. HFES, 1989.</note>
+</biblStruct>
+
+<biblStruct coords="17,307.44,267.28,235.65,8.64;17,317.40,279.05,224.03,8.82;17,317.40,291.01,100.17,8.82" xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Preprint repository arXiv achieves milestone million uploads</title>
+		<author>
+			<persName coords=""><forename type="first">Pang</forename><surname>Koh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Percy</forename><surname>Liang</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/pt.5.028530</idno>
+		<idno type="arXiv">arXiv:1703.04730</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Physics Today</title>
+		<title level="j" type="abbrev">Phys. Today</title>
+		<idno type="ISSNe">1945-0699</idno>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<publisher>AIP Publishing</publisher>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note type="raw_reference">Koh, Pang Wei and Liang, Percy. Understanding black- box predictions via influence functions. arXiv preprint arXiv:1703.04730, 2017.</note>
+</biblStruct>
+
+<biblStruct coords="17,307.44,310.48,235.25,8.64;17,317.40,322.44,225.28,8.64;17,317.40,334.39,225.69,8.64;17,317.40,346.35,225.69,8.64;17,317.40,358.13,224.03,8.82;17,317.09,370.08,138.92,8.82" xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Grader Variability and the Importance of Reference Standards for Evaluating Machine Learning Models for Diabetic Retinopathy</title>
+		<author>
+			<persName coords=""><forename type="first">Jonathan</forename><surname>Krause</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Varun</forename><surname>Gulshan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ehsan</forename><surname>Rahimy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Peter</forename><surname>Karth</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kasumi</forename><surname>Widner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Greg</forename><forename type="middle">S</forename><surname>Corrado</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lily</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dale</forename><forename type="middle">R</forename><surname>Webster</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ophtha.2018.01.034</idno>
+		<idno>abs/1710.01711</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ophthalmology</title>
+		<title level="j" type="abbrev">Ophthalmology</title>
+		<idno type="ISSN">0161-6420</idno>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="1264" to="1272"/>
+			<date type="published" when="2017">2017</date>
+			<publisher>Elsevier BV</publisher>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Krause, Jonathan, Gulshan, Varun, Rahimy, Ehsan, Karth, Peter, Widner, Kasumi, Corrado, Gregory S., Peng, Lily, and Webster, Dale R. Grader variability and the impor- tance of reference standards for evaluating machine learn- ing models for diabetic retinopathy. Computing Research Repository, abs/1710.01711, 2017.</note>
+</biblStruct>
+
+<biblStruct coords="17,307.44,389.56,235.74,8.64;17,317.04,401.51,224.88,8.64;17,317.40,414.40,193.77,7.01" xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Adversarial Examples in the Physical World</title>
+		<author>
+			<persName coords=""><forename type="first">Alexey</forename><surname>Kurakin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ian</forename><forename type="middle">J</forename><surname>Goodfellow</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Samy</forename><surname>Bengio</surname></persName>
+		</author>
+		<idno type="DOI">10.1201/9781351251389-8</idno>
+		<ptr target="https://arxiv.org/abs/1611.01236"/>
+	</analytic>
+	<monogr>
+		<title level="m">Artificial Intelligence Safety and Security</title>
+		<imprint>
+			<publisher>Chapman and Hall/CRC</publisher>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="99" to="112"/>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Kurakin, Alexey, Goodfellow, Ian J., and Bengio, Samy. Adversarial machine learning at scale. 2017. URL https://arxiv.org/abs/1611.01236.</note>
+</biblStruct>
+
+<biblStruct coords="17,307.44,432.76,235.66,8.64;17,317.40,444.54,225.69,8.82;17,317.40,456.50,111.80,8.82" xml:id="b19">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Scott</forename><surname>Lundberg</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Su</forename><surname>Lee</surname></persName>
+		</author>
+		<idno>abs/1705.07874</idno>
+		<title level="m">A unified approach to interpreting model predictions. Computing Research Repository</title>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Lundberg, Scott and Lee, Su-In. A unified approach to inter- preting model predictions. Computing Research Reposi- tory, abs/1705.07874, 2017.</note>
+</biblStruct>
+
+<biblStruct coords="17,307.44,475.97,235.25,8.64;17,317.40,487.93,224.04,8.64;17,317.04,499.70,226.05,8.82;17,317.40,511.66,225.78,8.82;17,317.40,523.79,72.23,8.64" xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Distributed representations of words and phrases and their compositionality</title>
+		<author>
+			<persName coords=""><forename type="first">Tomas</forename><surname>Mikolov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Sutskever</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Ilya</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Kai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Corrado</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Greg</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jeff</forename><surname>Dean</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="page" from="3111" to="3119"/>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Mikolov, Tomas, Sutskever, Ilya, Chen, Kai, Corrado, Greg S, and Dean, Jeff. Distributed representations of words and phrases and their compositionality. In Ad- vances in Neural Information Processing Systems, pp. 3111-3119, 2013.</note>
+</biblStruct>
+
+<biblStruct coords="17,307.44,543.09,235.75,8.64;17,317.40,554.86,224.04,8.82;17,317.09,566.82,176.65,8.82" xml:id="b21">
+	<monogr>
+		<title level="m" type="main">Inceptionism: Going deeper into neural networks</title>
+		<author>
+			<persName coords=""><forename type="first">Alexander</forename><surname>Mordvintsev</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Christopher</forename><surname>Olah</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mike</forename><surname>Tyka</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2015-06">June. 2015</date>
+			<publisher>Google Research Blog</publisher>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page">14</biblScope>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Mordvintsev, Alexander, Olah, Christopher, and Tyka, Mike. Inceptionism: Going deeper into neural networks. Google Research Blog. Retrieved June, 20:14, 2015.</note>
+</biblStruct>
+
+<biblStruct coords="17,307.44,586.30,235.75,8.64;17,317.40,598.07,225.78,8.82;17,317.40,610.21,208.66,8.64" xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Feature Visualization</title>
+		<author>
+			<persName coords=""><forename type="first">Chris</forename><surname>Olah</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alexander</forename><surname>Mordvintsev</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ludwig</forename><surname>Schubert</surname></persName>
+		</author>
+		<idno type="DOI">10.23915/distill.00007</idno>
+		<ptr target="https://distill.pub/2017/feature-visualization"/>
+	</analytic>
+	<monogr>
+		<title level="j">Distill</title>
+		<title level="j" type="abbrev">Distill</title>
+		<idno type="ISSN">2476-0757</idno>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<date type="published" when="2017-11-07">2017</date>
+			<publisher>Distill Working Group</publisher>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Olah, Chris, Mordvintsev, Alexander, and Schubert, Ludwig. Feature visualization. Distill, 2017. doi: 10.23915/distill. 00007. https://distill.pub/2017/feature-visualization.</note>
+</biblStruct>
+
+<biblStruct coords="17,307.44,629.50,235.66,8.64;17,317.40,641.46,225.69,8.64;17,317.40,653.41,225.78,8.64;17,317.40,665.19,159.58,8.82" xml:id="b23">
+	<monogr>
+		<title level="m" type="main">Singular vector canonical correlation analysis for deep understanding and improvement</title>
+		<author>
+			<persName coords=""><forename type="first">Maithra</forename><surname>Raghu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Justin</forename><surname>Gilmer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jason</forename><surname>Yosinski</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jascha</forename><surname>Sohl-Dickstein</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Svcca</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1706.05806</idno>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note type="raw_reference">Raghu, Maithra, Gilmer, Justin, Yosinski, Jason, and Sohl- Dickstein, Jascha. Svcca: Singular vector canonical corre- lation analysis for deep understanding and improvement. arXiv preprint arXiv:1706.05806, 2017.</note>
+</biblStruct>
+
+<biblStruct coords="17,307.44,684.66,235.75,8.64;17,316.08,696.62,225.36,8.64;17,317.40,708.40,217.25,8.82" xml:id="b24">
+	<analytic>
+		<title level="a" type="main">"Why Should I Trust You?"</title>
+		<author>
+			<persName coords=""><forename type="first">Marco</forename><forename type="middle">Tulio</forename><surname>Ribeiro</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sameer</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Carlos</forename><surname>Guestrin</surname></persName>
+		</author>
+		<idno type="DOI">10.1145/2939672.2939778</idno>
+		<idno type="arXiv">arXiv:1602.04938</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</title>
+		<meeting>the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2016-08-13">2016</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note>why should i trust you?": Explaining the predictions of any classifier</note>
+	<note type="raw_reference">Ribeiro, Marco Tulio, Singh, Sameer, and Guestrin, Carlos. "why should i trust you?": Explaining the predictions of any classifier. arXiv preprint arXiv:1602.04938, 2016.</note>
+</biblStruct>
+
+<biblStruct coords="18,55.44,70.54,235.24,8.64;18,65.40,82.49,225.69,8.64;18,65.40,94.45,225.78,8.64;18,65.40,106.22,225.69,8.82;18,65.40,118.18,225.28,8.82;18,65.40,130.31,22.42,8.64" xml:id="b25">
+	<analytic>
+		<title level="a" type="main">ImageNet Large Scale Visual Recognition Challenge</title>
+		<author>
+			<persName coords=""><forename type="first">Olga</forename><surname>Russakovsky</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jia</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hao</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jonathan</forename><surname>Krause</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sanjeev</forename><surname>Satheesh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sean</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zhiheng</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andrej</forename><surname>Karpathy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Aditya</forename><surname>Khosla</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Michael</forename><surname>Bernstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Alexander</forename><forename type="middle">C</forename><surname>Berg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Li</forename><surname>Fei-Fei</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11263-015-0816-y</idno>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Computer Vision</title>
+		<title level="j" type="abbrev">Int J Comput Vis</title>
+		<idno type="ISSN">0920-5691</idno>
+		<idno type="ISSNe">1573-1405</idno>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="211" to="252"/>
+			<date type="published" when="2015-04-11">2015</date>
+			<publisher>Springer Science and Business Media LLC</publisher>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Russakovsky, Olga, Deng, Jia, Su, Hao, Krause, Jonathan, Satheesh, Sanjeev, Ma, Sean, Huang, Zhiheng, Karpa- thy, Andrej, Khosla, Aditya, Bernstein, Michael, et al. Imagenet large scale visual recognition challenge. Inter- national Journal of Computer Vision, 115(3):211-252, 2015.</note>
+</biblStruct>
+
+<biblStruct coords="18,55.44,151.08,235.24,8.64;18,65.40,163.03,225.28,8.64;18,65.40,174.99,224.04,8.64;18,65.40,186.94,224.04,8.64;18,65.40,198.90,225.78,8.64;18,64.97,210.68,219.02,8.82" xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Machine learning on brain MRI data for differential diagnosis of Parkinson's disease and Progressive Supranuclear Palsy</title>
+		<author>
+			<persName coords=""><forename type="first">Christian</forename><surname>Salvatore</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Cerasa</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Castiglioni</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Gallivanone</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Augimeri</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Lopez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Arabia</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Morelli</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">C</forename><surname>Gilardi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Quattrone</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jneumeth.2013.11.016</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Neuroscience Methods</title>
+		<title level="j" type="abbrev">Journal of Neuroscience Methods</title>
+		<idno type="ISSN">0165-0270</idno>
+		<imprint>
+			<biblScope unit="volume">222</biblScope>
+			<biblScope unit="page" from="230" to="237"/>
+			<date type="published" when="2014-01">2014</date>
+			<publisher>Elsevier BV</publisher>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Salvatore, Christian, Cerasa, Antonio, Castiglioni, Isabella, Gallivanone, F, Augimeri, A, Lopez, M, Arabia, G, Morelli, M, Gilardi, MC, and Quattrone, A. Machine learning on brain mri data for differential diagnosis of parkinson's disease and progressive supranuclear palsy. Journal of Neuroscience Methods, 222:230-237, 2014.</note>
+</biblStruct>
+
+<biblStruct coords="18,55.44,231.62,235.65,8.64;18,65.40,243.57,225.29,8.64;18,65.40,255.35,224.04,8.82;18,65.40,267.31,100.17,8.82" xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Grad-CAM: Visual Explanations from Deep Networks via Gradient-Based Localization</title>
+		<author>
+			<persName coords=""><forename type="first">Ramprasaath</forename><forename type="middle">R</forename><surname>Selvaraju</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Michael</forename><surname>Cogswell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Abhishek</forename><surname>Das</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ramakrishna</forename><surname>Vedantam</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Devi</forename><surname>Parikh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dhruv</forename><surname>Batra</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/iccv.2017.74</idno>
+		<idno type="arXiv">arXiv:1611.07450</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2017 IEEE International Conference on Computer Vision (ICCV)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Selvaraju, Ramprasaath R, Das, Abhishek, Vedantam, Ra- makrishna, Cogswell, Michael, Parikh, Devi, and Batra, Dhruv. Grad-cam: Why did you say that? arXiv preprint arXiv:1611.07450, 2016.</note>
+</biblStruct>
+
+<biblStruct coords="18,55.44,288.25,235.65,8.64;18,65.40,300.21,224.03,8.64;18,65.40,311.98,225.28,8.82;18,65.40,324.12,22.42,8.64" xml:id="b28">
+	<analytic>
+		<title level="a" type="main">What noise has been</title>
+		<author>
+			<persName coords=""><surname>Smilkov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Daniel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Thorat</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Nikhil</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Been</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Fernanda</forename><surname>Viégas</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Martin</forename><surname>Wattenberg</surname></persName>
+		</author>
+		<idno type="DOI">10.5040/9781501313349.0006</idno>
+		<idno type="arXiv">arXiv:1706.03825</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Smoothgrad: removing noise by adding noise</title>
+		<imprint>
+			<publisher>Bloomsbury Publishing Plc</publisher>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="17" to="40"/>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note type="raw_reference">Smilkov, Daniel, Thorat, Nikhil, Kim, Been, Viégas, Fer- nanda, and Wattenberg, Martin. Smoothgrad: removing noise by adding noise. arXiv preprint arXiv:1706.03825, 2017.</note>
+</biblStruct>
+
+<biblStruct coords="18,55.44,344.88,235.65,8.64;18,65.40,356.84,225.28,8.64;18,65.40,368.61,224.04,8.82;18,65.40,380.57,100.17,8.82" xml:id="b29">
+	<monogr>
+		<title level="m" type="main">Convnets and imagenet beyond accuracy: Explanations, bias detection, adversarial examples and model criticism</title>
+		<author>
+			<persName coords=""><forename type="first">Pierre</forename><surname>Stock</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Moustapha</forename><surname>Cisse</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1711.11443</idno>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note type="raw_reference">Stock, Pierre and Cisse, Moustapha. Convnets and im- agenet beyond accuracy: Explanations, bias detection, adversarial examples and model criticism. arXiv preprint arXiv:1711.11443, 2017.</note>
+</biblStruct>
+
+<biblStruct coords="18,55.44,401.51,235.65,8.64;18,65.40,413.29,224.03,8.82;18,65.40,425.24,100.17,8.82" xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Preprint repository arXiv achieves milestone million uploads</title>
+		<author>
+			<persName coords=""><forename type="first">Mukund</forename><surname>Sundararajan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ankur</forename><surname>Taly</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Qiqi</forename><surname>Yan</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/pt.5.028530</idno>
+		<idno type="arXiv">arXiv:1703.01365</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Physics Today</title>
+		<title level="j" type="abbrev">Phys. Today</title>
+		<idno type="ISSNe">1945-0699</idno>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<publisher>AIP Publishing</publisher>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note type="raw_reference">Sundararajan, Mukund, Taly, Ankur, and Yan, Qiqi. Ax- iomatic attribution for deep networks. arXiv preprint arXiv:1703.01365, 2017.</note>
+</biblStruct>
+
+<biblStruct coords="18,55.44,446.19,235.25,8.64;18,65.40,458.14,225.69,8.64;18,65.40,469.92,224.04,8.82;18,65.40,481.87,129.97,8.82" xml:id="b31">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Christian</forename><surname>Szegedy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Zaremba</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Wojciech</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Sutskever</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Ilya</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Joan</forename><surname>Bruna</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Erhan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Dumitru</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ian</forename><surname>Goodfellow</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Rob</forename><surname>Fergus</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1312.6199</idno>
+		<title level="m">Intriguing properties of neural networks</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note type="raw_reference">Szegedy, Christian, Zaremba, Wojciech, Sutskever, Ilya, Bruna, Joan, Erhan, Dumitru, Goodfellow, Ian, and Fer- gus, Rob. Intriguing properties of neural networks. arXiv preprint arXiv:1312.6199, 2013.</note>
+</biblStruct>
+
+<biblStruct coords="18,55.44,502.82,235.25,8.64;18,65.40,514.77,225.28,8.64;18,65.04,526.73,224.39,8.64;18,65.40,538.68,224.04,8.64;18,65.40,550.64,76.10,8.64" xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Going deeper with convolutions</title>
+		<author>
+			<persName coords=""><forename type="first">Christian</forename><surname>Szegedy</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Wei Liu</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Yangqing Jia</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pierre</forename><surname>Sermanet</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Scott</forename><surname>Reed</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dragomir</forename><surname>Anguelov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dumitru</forename><surname>Erhan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Vincent</forename><surname>Vanhoucke</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andrew</forename><surname>Rabinovich</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/cvpr.2015.7298594</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015-06">2015</date>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Szegedy, Christian, Liu, Wei, Jia, Yangqing, Sermanet, Pierre, Reed, Scott, Anguelov, Dragomir, Erhan, Dumitru, Vanhoucke, Vincent, Rabinovich, Andrew, et al. Going deeper with convolutions. Computer Vision and Pattern Recognition, 2015.</note>
+</biblStruct>
+
+<biblStruct coords="18,55.44,571.40,235.25,8.64;18,65.40,583.36,225.69,8.64;18,65.40,595.13,224.04,8.82;18,65.40,607.09,224.03,8.59;18,65.09,619.05,140.20,8.82" xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Rethinking the Inception Architecture for Computer Vision</title>
+		<author>
+			<persName coords=""><forename type="first">Christian</forename><surname>Szegedy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Vincent</forename><surname>Vanhoucke</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sergey</forename><surname>Ioffe</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jon</forename><surname>Shlens</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zbigniew</forename><surname>Wojna</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/cvpr.2016.308</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2016-06">2016</date>
+			<biblScope unit="page" from="2818" to="2826"/>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Szegedy, Christian, Vanhoucke, Vincent, Ioffe, Sergey, Shlens, Jon, and Wojna, Zbigniew. Rethinking the in- ception architecture for computer vision. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 2818-2826, 2016.</note>
+</biblStruct>
+
+<biblStruct coords="18,55.44,639.99,234.00,8.64;18,65.40,651.77,224.04,8.82;18,65.09,663.72,86.07,8.82" xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Regression Shrinkage and Selection Via the Lasso</title>
+		<author>
+			<persName coords=""><forename type="first">Robert</forename><surname>Tibshirani</surname></persName>
+		</author>
+		<idno type="DOI">10.1111/j.2517-6161.1996.tb02080.x</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the Royal Statistical Society: Series B (Methodological)</title>
+		<title level="j" type="abbrev">Journal of the Royal Statistical Society: Series B (Methodological)</title>
+		<idno type="ISSN">0035-9246</idno>
+		<idno type="ISSNe">2517-6161</idno>
+		<imprint>
+			<biblScope unit="volume">58</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="267" to="288"/>
+			<date type="published" when="1994">1994</date>
+			<publisher>Wiley</publisher>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Tibshirani, Robert. Regression shrinkage and selection via the lasso. Journal of the Royal Statistical Society, Series B, 58:267-288, 1994.</note>
+</biblStruct>
+
+<biblStruct coords="18,55.44,684.66,235.65,8.64;18,65.40,696.62,225.69,8.64;18,65.40,708.40,176.18,8.82" xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Supersparse linear integer models for optimized medical scoring systems</title>
+		<author>
+			<persName coords=""><forename type="first">Berk</forename><surname>Ustun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Cynthia</forename><surname>Rudin</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s10994-015-5528-6</idno>
+		<idno type="arXiv">arXiv:1306.6677</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Machine Learning</title>
+		<title level="j" type="abbrev">Mach Learn</title>
+		<idno type="ISSN">0885-6125</idno>
+		<idno type="ISSNe">1573-0565</idno>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="349" to="391"/>
+			<date type="published" when="2013">2013</date>
+			<publisher>Springer Science and Business Media LLC</publisher>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note type="raw_reference">Ustun, Berk, Tracà, Stefano, and Rudin, Cynthia. Super- sparse linear integer models for interpretable classifica- tion. arXiv preprint arXiv:1306.6677, 2013.</note>
+</biblStruct>
+
+<biblStruct coords="18,307.44,70.54,235.66,8.64;18,317.40,82.31,224.04,8.82;18,317.40,94.27,197.46,8.82" xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Visualizing and Understanding Convolutional Networks</title>
+		<author>
+			<persName coords=""><forename type="first">Matthew</forename><forename type="middle">D</forename><surname>Zeiler</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Rob</forename><surname>Fergus</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/978-3-319-10590-1_53</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Computer Vision – ECCV 2014</title>
+		<imprint>
+			<publisher>Springer International Publishing</publisher>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="818" to="833"/>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Zeiler, Matthew D and Fergus, Rob. Visualizing and under- standing convolutional networks. In European conference on computer vision, pp. 818-833. Springer, 2014.</note>
+</biblStruct>
+
+<biblStruct coords="18,307.44,114.37,235.25,8.64;18,317.04,126.33,224.39,8.64;18,317.40,138.10,224.04,8.82;18,317.40,150.06,100.17,8.82" xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks</title>
+		<author>
+			<persName><forename type="first">Jun-Yan</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Taesung</forename><surname>Park</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Phillip</forename><surname>Isola</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alexei</forename><forename type="middle">A</forename><surname>Efros</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/iccv.2017.244</idno>
+		<idno type="arXiv">arXiv:1703.10593</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2017 IEEE International Conference on Computer Vision (ICCV)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2017-10">2017</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note type="raw_reference">Zhu, Jun-Yan, Park, Taesung, Isola, Phillip, and Efros, Alexei A. Unpaired image-to-image translation using cycle-consistent adversarial networks. arXiv preprint arXiv:1703.10593, 2017.</note>
+</biblStruct>
+
+<biblStruct coords="18,307.44,170.16,234.00,8.64;18,317.40,181.94,224.03,8.82;18,317.40,193.90,161.75,8.82" xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Sparse Principal Component Analysis</title>
+		<author>
+			<persName coords=""><forename type="first">Hui</forename><surname>Zou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Trevor</forename><surname>Hastie</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Robert</forename><surname>Tibshirani</surname></persName>
+		</author>
+		<idno type="DOI">10.1198/106186006x113430</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Computational and Graphical Statistics</title>
+		<title level="j" type="abbrev">Journal of Computational and Graphical Statistics</title>
+		<idno type="ISSN">1061-8600</idno>
+		<idno type="ISSNe">1537-2715</idno>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="265" to="286"/>
+			<date type="published" when="2004">2006. 2004</date>
+			<publisher>Informa UK Limited</publisher>
+		</imprint>
+	</monogr>
+	<note type="raw_reference">Zou, Hui, Hastie, Trevor, and Tibshirani, Robert. Sparse principal component analysis. Journal of Computational and Graphical Statistics, 15:2006, 2004.</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>
