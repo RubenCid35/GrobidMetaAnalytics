@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "grobidmetaanalytics"
+version = "0.1.0"
+description = "Generación de reporte de características de Publicaciones con Grobid y Python"
+authors = ["Rubén Cid <rubencid001@gmail.com>"]
+license = "MIT License"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fpdf2 = "^2.7.8"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
