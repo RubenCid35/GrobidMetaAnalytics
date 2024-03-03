@@ -58,7 +58,8 @@ Para poder ejecutar en local, se deberá:
 1. Mover todos las publicaciones para la lectura del script a la carpeta `/papers/`.
 2. Usar Docker Compose V2 para ejecutar imágenes del script
     ```bash
-    docker compose up
+    docker compose build
+    docker compose run report-generator
     ``` 
 
 ## Solución de Posibles Errores
