@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  grobid-server:
+    image: lfoppiano/grobid:0.8.0
+    container_name: grobid-server
+    ports:
+      - 8070:8070
+      - 8071:8071
+    volumes:
+      - ./config/grobid:/home/config/grobid
+    restart: always
+      
+  report-generator:
+    build: . 
+    container_name: report-generator
+    volumes:
+      - ./papers:/home/papers
+      - ./results:/home/results
+    
+    depends_on:
+      - grobid-server
+
+    restart: always
+
+networks:
+  default:
+    driver: bridge  

@@ -1,0 +1,41 @@
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type": "SoftwareSourceCode",
+    "license": "https://spdx.org/licenses/MIT",
+    "codeRepository": "https://github.com/RubenCid35/GrobidMetaAnalytics",
+    "dateCreated": "2023-02-22",
+    "datePublished": "2023-03-03",
+    "dateModified": "2023-03-03",
+    "issueTracker": "https://github.com/RubenCid35/GrobidMetaAnalytics/issues",
+    "name": "Owner avatar GrobidMetaAnalytics ",
+    "version": "0.0",
+    "description": "En este repositorio se puede encontrar un script de Python\n  para la lectura de publicaciones y la extracción de\n  características como número de figuras, links o el\n  abstracto. En base a estas características, se genera un\n  archivo PDF y varias figura",
+    "keywords": [
+        "grobid",
+        "crf",
+        "python"
+    ],
+    "programmingLanguage": [
+        "Python 3"
+    ],
+    "runtimePlatform": [
+        "Docker"
+    ],
+    "operatingSystem": [
+        "Linux",
+        "Windows"
+    ],
+    "softwareRequirements": [
+        "Python 3.11",
+        "Docker",
+        "Grobid"
+    ],
+    "author": [
+        {
+            "@type": "Person",
+            "givenName": "Rubén",
+            "familyName": "Cid Costa",
+            "email": "rubencid001@gmail.com"
+        }
+    ]
+}

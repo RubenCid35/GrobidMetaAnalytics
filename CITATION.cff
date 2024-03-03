@@ -1,0 +1,27 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: GrobidMetaAnalytics
+message: >-
+  Extracción y Generación de Reporte de Características de
+  Publicaciones con Grobid
+type: software
+authors:
+  - given-names: Rubén Cid Costa
+    email: rubencid001@gmail.com
+repository-code: 'https://github.com/RubenCid35/GrobidMetaAnalytics'
+abstract: >-
+  En este repositorio se puede encontrar un script de Python
+  para la lectura de publicaciones y la extracción de
+  características como número de figuras, links o el
+  abstracto. En base a estas características, se genera un
+  archivo PDF y varias figura
+keywords:
+  - Python
+  - Grobid
+  - CRF
+license: MIT
+commit: 84e9174f79e6ae411fec8bff6e84f915d2a00e22
+version: '0.0'
+date-released: '2024-03-03'

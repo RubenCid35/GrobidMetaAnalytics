@@ -1,5 +1,5 @@
 
-
+import sys
 from os import path, listdir, mkdir
 
 from xml.etree import ElementTree
@@ -12,6 +12,7 @@ from fpdf import FPDF
 from fpdf.fonts import FontFace
 from fpdf.enums import TableCellFillMode
 
+import time
 from collections import Counter
 
 def create_pdf() -> FPDF:
@@ -64,10 +65,19 @@ def create_enumeration(table, row, title, found_links):
         row.cell(row_text, style = style)
 
 def main():
+
+    print("Esperando al inicio del servidor de mov")
+    time.sleep(40)
+
     # Extract Information from the publications
+    files = []
+    npapers = sum(map(lambda p: int(p.endswith("pdf")), listdir("papers")))
     grobid_client = GrobidClient(config_path="./config/python/config.json")
-    grobid_client.process("processFulltextDocument", "./papers", output = "./tmp/", n=10, 
+    print("Procesando archivos: ")
+    while len(files) != npapers: 
+        grobid_client.process("processFulltextDocument", "./papers", output = "./tmp/", n=10, 
                            consolidate_citations = False, include_raw_citations = False,  )
+        files = list(filter(lambda file_path: file_path.endswith('.xml'), listdir("tmp")))
 
     abstracts = ""
     figures   = []
@@ -75,7 +85,8 @@ def main():
     
     ns = "{http://www.tei-c.org/ns/1.0}"
     text = lambda obj: obj.text
-    for file_path in listdir("tmp"):
+
+    for file_path in files:
 
         # Parse the results
         if not file_path.endswith('.xml'): continue
@@ -121,7 +132,7 @@ def main():
         found_links +=  list(map(lambda ob: ob.attrib.get("target"), root.findall(tag)))
         links.append((title, found_links))
 
-    mkdir("results")
+    if not path.exists("results"): mkdir("results")
 
     # Generate Report
     pdf = create_pdf()
