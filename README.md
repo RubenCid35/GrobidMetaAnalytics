@@ -1,5 +1,10 @@
 # GrobidMetaAnalytics
 
+
+[![DOI](https://zenodo.org/badge/764771480.svg)](https://zenodo.org/doi/10.5281/zenodo.10775713)
+
+
+
 En este repositorio se puede encontrar un script de Python para la lectura de publicaciones y la extracción de características
 como número de figuras, links o el abstracto. En base a estas características, se genera un archivo PDF y varias figuras. Estos
 archivos continen los siguientes puntos de análisis:
