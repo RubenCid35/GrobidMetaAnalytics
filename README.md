@@ -56,7 +56,8 @@ Al acabar el programa, se generarán los archivos solicitados en la carpeta `/re
 ### Ejecución en Docker Compose
 Para poder ejecutar en local, se deberá:
 1. Mover todos las publicaciones para la lectura del script a la carpeta `/papers/`.
-2. Usar Docker Compose V2 para ejecutar imágenes del script
+2. Crear carpeta `results`
+3. Usar Docker Compose V2 para ejecutar imágenes del script
     ```bash
     docker compose build
     docker compose run report-generator
