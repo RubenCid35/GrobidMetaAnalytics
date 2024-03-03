@@ -13,3 +13,7 @@ Para el funcionamiento del script, se divide en una serie de pasos:
 3. Generación de las visualizaciones y del reporte.
 
 Para la extracción de los link, los enlaces son extendidos en el caso de DOI y enlaces arXiv.
+
+## Tests
+Dada la naturaleza del script, se han realizado tests con varios conjuntos de publicaciones para poder verificar el funcionamiento. 
+No se han realizado test unitarios.
